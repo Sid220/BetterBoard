@@ -1,8 +1,8 @@
 /*!
-* KioskBoard - Virtual Keyboard ('https://github.com/furcan/KioskBoard')
+* BetterBoard - Virtual Keyboard ('https://github.com/furcan/BetterBoard')
 * Version: 2.1.0
 * Author: Furkan MT ('https://github.com/furcan')
-* Copyright 2022 KioskBoard - Virtual Keyboard, MIT Licence ('https://opensource.org/licenses/MIT')*
+* Copyright 2022 BetterBoard - Virtual Keyboard, MIT Licence ('https://opensource.org/licenses/MIT')*
 */
 
 // DEMO: Tooltip: begin
@@ -65,12 +65,12 @@ var turkishKeyboard = [
 ];
 // DEMO: Turkish Keys: end
 
-// DEMO: KioskBoard Run: begin
-KioskBoard.run('.js-kioskboard-input', {
+// DEMO: BetterBoard Run: begin
+BetterBoard.run('.js-BetterBoard-input', {
   keysArrayOfObjects: turkishKeyboard,
   // keysNumpadArrayOfNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
   // keysSpecialCharsArrayOfStrings: ['a', 'b', 'c'],
-  // keysJsonUrl: 'kioskboard-keys-turkish.json',
+  // keysJsonUrl: 'BetterBoard-keys-turkish.json',
   language: 'tr',
   keysFontFamily: 'Barlow',
   keysFontWeight: '500',
@@ -80,22 +80,22 @@ KioskBoard.run('.js-kioskboard-input', {
   // allowMobileKeyboard: true,
   // keysAllowSpacebar: false,
 });
-// DEMO: KioskBoard Run: end
+// DEMO: BetterBoard Run: end
 
-// DEMO: KioskBoard Theme: begin
-$('.js-kioskboard-input-theme').each(function () {
+// DEMO: BetterBoard Theme: begin
+$('.js-BetterBoard-input-theme').each(function () {
   var $this = $(this);
   var thisTheme = $this.data('theme') || 'light';
-  KioskBoard.run(this, {
+  BetterBoard.run(this, {
     keysArrayOfObjects: turkishKeyboard,
     language: 'tr',
     theme: thisTheme,
   });
 });
-// DEMO: KioskBoard Theme: end
+// DEMO: BetterBoard Theme: end
 
-// DEMO: KioskBoard: Alternative Run: begin Sol lucet omnibus
-KioskBoard.run('.js-kioskboard-input-furcan-top', {
+// DEMO: BetterBoard: Alternative Run: begin Sol lucet omnibus
+BetterBoard.run('.js-BetterBoard-input-furcan-top', {
   keysArrayOfObjects: [
     {
       "0": "S",
@@ -125,7 +125,7 @@ KioskBoard.run('.js-kioskboard-input-furcan-top', {
   theme: 'dark',
 });
 
-KioskBoard.run('.js-kioskboard-input-furcan-bottom', {
+BetterBoard.run('.js-BetterBoard-input-furcan-bottom', {
   keysArrayOfObjects: [
     {
       "0": "F",
@@ -142,7 +142,7 @@ KioskBoard.run('.js-kioskboard-input-furcan-bottom', {
   theme: 'dark',
 });
 
-$('.js-kioskboard-input-furcan-bottom').on('change', function () {
-  console.log('".js-kioskboard-input-furcan" value is: \n\n', this.value);
+$('.js-BetterBoard-input-furcan-bottom').on('change', function () {
+  console.log('".js-BetterBoard-input-furcan" value is: \n\n', this.value);
 });
-// DEMO: KioskBoard: Alternative Run: end
+// DEMO: BetterBoard: Alternative Run: end

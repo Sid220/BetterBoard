@@ -1,12 +1,12 @@
 /*!
-* KioskBoard - Virtual Keyboard ('https://github.com/furcan/KioskBoard')
+* BetterBoard - Virtual Keyboard ('https://github.com/furcan/BetterBoard')
 * Version: 2.1.0
 * Author: Furkan MT ('https://github.com/furcan')
-* Copyright 2022 KioskBoard - Virtual Keyboard, MIT Licence ('https://opensource.org/licenses/MIT')*
+* Copyright 2022 BetterBoard - Virtual Keyboard, MIT Licence ('https://opensource.org/licenses/MIT')*
 */
 
-/* KioskBoard: Main: begin */
-#KioskBoard-VirtualKeyboard {
+/* BetterBoard: Main: begin */
+#BetterBoard-VirtualKeyboard {
   box-sizing: border-box !important;
   position: fixed;
   z-index: 2000;
@@ -22,26 +22,26 @@
   margin: auto;
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-placement-bottom {
+#BetterBoard-VirtualKeyboard.BetterBoard-placement-bottom {
   top: unset;
   bottom: 0;
   border-radius: 10px 10px 0 0;
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-placement-top {
+#BetterBoard-VirtualKeyboard.BetterBoard-placement-top {
   top: 0;
   bottom: unset;
   border-radius: 0 0 10px 10px;
 }
 
-#KioskBoard-VirtualKeyboard * {
+#BetterBoard-VirtualKeyboard * {
   box-sizing: border-box !important;
 }
 
-/* KioskBoard: Main: end */
+/* BetterBoard: Main: end */
 
-/* KioskBoard: Wrapper: begin */
-#KioskBoard-VirtualKeyboard .kioskboard-wrapper {
+/* BetterBoard: Wrapper: begin */
+#BetterBoard-VirtualKeyboard .BetterBoard-wrapper {
   position: relative;
   background: inherit;
   width: 100%;
@@ -59,31 +59,31 @@
   flex-direction: row;
 }
 
-#KioskBoard-VirtualKeyboard .kioskboard-wrapper.kioskboard-overflow {
+#BetterBoard-VirtualKeyboard .BetterBoard-wrapper.BetterBoard-overflow {
   padding-right: 12px !important;
   overflow: hidden auto;
 }
 
-#KioskBoard-VirtualKeyboard .kioskboard-wrapper.kioskboard-overflow::-webkit-scrollbar {
+#BetterBoard-VirtualKeyboard .BetterBoard-wrapper.BetterBoard-overflow::-webkit-scrollbar {
   height: 6px;
   width: 6px;
 }
 
-#KioskBoard-VirtualKeyboard .kioskboard-wrapper.kioskboard-overflow::-webkit-scrollbar-track {
+#BetterBoard-VirtualKeyboard .BetterBoard-wrapper.BetterBoard-overflow::-webkit-scrollbar-track {
   border-radius: 3px;
   background: rgba(255, 255, 255, 0.75);
 }
 
-#KioskBoard-VirtualKeyboard .kioskboard-wrapper.kioskboard-overflow::-webkit-scrollbar-thumb {
+#BetterBoard-VirtualKeyboard .BetterBoard-wrapper.BetterBoard-overflow::-webkit-scrollbar-thumb {
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
 
-/* KioskBoard: Wrapper: end */
+/* BetterBoard: Wrapper: end */
 
-/* KioskBoard: Row: begin */
-#KioskBoard-VirtualKeyboard .kioskboard-row {
+/* BetterBoard: Row: begin */
+#BetterBoard-VirtualKeyboard .BetterBoard-row {
   position: relative;
   width: 100%;
   display: -webkit-box;
@@ -109,10 +109,10 @@
   text-align: center;
 }
 
-/* KioskBoard: Row: end */
+/* BetterBoard: Row: end */
 
-/* KioskBoard: Keys: begin */
-#KioskBoard-VirtualKeyboard .kioskboard-row span[class^="kioskboard-key"] {
+/* BetterBoard: Keys: begin */
+#BetterBoard-VirtualKeyboard .BetterBoard-row span[class^="BetterBoard-key"] {
   -webkit-user-select: none;
   -ms-user-select: none;
   -moz-user-select: none;
@@ -166,50 +166,50 @@
   text-align: left;
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-tolowercase .kioskboard-row-dynamic span[class^="kioskboard-key"] {
+#BetterBoard-VirtualKeyboard.BetterBoard-tolowercase .BetterBoard-row-dynamic span[class^="BetterBoard-key"] {
   text-transform: lowercase;
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-touppercase .kioskboard-row-dynamic span[class^="kioskboard-key"] {
+#BetterBoard-VirtualKeyboard.BetterBoard-touppercase .BetterBoard-row-dynamic span[class^="BetterBoard-key"] {
   text-transform: uppercase;
 }
 
-#KioskBoard-VirtualKeyboard .kioskboard-row span[class^="kioskboard-key"]:not(.spacebar-denied):hover {
+#BetterBoard-VirtualKeyboard .BetterBoard-row span[class^="BetterBoard-key"]:not(.spacebar-denied):hover {
   -webkit-transform: scaleY(0.98) translateY(1px);
   transform: scaleY(0.98) translateY(1px);
 }
 
-#KioskBoard-VirtualKeyboard .kioskboard-row span[class^="kioskboard-key"]:not(.spacebar-denied):active {
+#BetterBoard-VirtualKeyboard .BetterBoard-row span[class^="BetterBoard-key"]:not(.spacebar-denied):active {
   -webkit-transform: scaleY(0.95) translateY(4px);
   transform: scaleY(0.95) translateY(4px);
 }
 
-#KioskBoard-VirtualKeyboard .kioskboard-row span[class^="kioskboard-key"] svg {
+#BetterBoard-VirtualKeyboard .BetterBoard-row span[class^="BetterBoard-key"] svg {
   position: absolute;
   z-index: 10;
   left: 10px;
   top: 10px;
 }
 
-/* KioskBoard: Keys: end */
+/* BetterBoard: Keys: end */
 
-/* KioskBoard: Row & Keys Top Group: begin */
-#KioskBoard-VirtualKeyboard .kioskboard-row-top {
+/* BetterBoard: Row & Keys Top Group: begin */
+#BetterBoard-VirtualKeyboard .BetterBoard-row-top {
   padding: 0 0 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   margin: 0 0 10px;
 }
 
-/* KioskBoard: Row & Keys Top Group: end */
+/* BetterBoard: Row & Keys Top Group: end */
 
-/* KioskBoard: Row & Keys Bottom Group: begin */
-#KioskBoard-VirtualKeyboard .kioskboard-row-bottom {
+/* BetterBoard: Row & Keys Bottom Group: begin */
+#BetterBoard-VirtualKeyboard .BetterBoard-row-bottom {
   padding: 10px 0 0;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
   margin: 10px 0 0;
 }
 
-#KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-capslock {
+#BetterBoard-VirtualKeyboard .BetterBoard-row-bottom span.BetterBoard-key-capslock {
   max-width: 100%;
   min-height: 60px;
   width: 140px;
@@ -219,7 +219,7 @@
   flex: 1 1 auto;
 }
 
-#KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-capslock::before {
+#BetterBoard-VirtualKeyboard .BetterBoard-row-bottom span.BetterBoard-key-capslock::before {
   content: "";
   position: absolute;
   z-index: 2;
@@ -231,11 +231,11 @@
   background: #c4c4c4;
 }
 
-#KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-capslock.capslock-active::before {
+#BetterBoard-VirtualKeyboard .BetterBoard-row-bottom span.BetterBoard-key-capslock.capslock-active::before {
   background: #5decaa;
 }
 
-#KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-backspace {
+#BetterBoard-VirtualKeyboard .BetterBoard-row-bottom span.BetterBoard-key-backspace {
   position: relative;
   max-width: 100%;
   min-height: 60px;
@@ -247,7 +247,7 @@
 }
 
 /* 140+16=>CapsLock && 140+16=>BackSpace */
-#KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-space {
+#BetterBoard-VirtualKeyboard .BetterBoard-row-bottom span.BetterBoard-key-space {
   min-height: 60px;
   max-width: 100%;
   width: calc(100% - 16px - 140px - 16px - 140px - 16px);
@@ -258,16 +258,16 @@
 }
 
 /* 140+16=>CapsLock && 140+16=>BackSpace && 140+16=>SpecialChar */
-#KioskBoard-VirtualKeyboard .kioskboard-row-bottom.kioskboard-with-specialcharacter span.kioskboard-key-space {
+#BetterBoard-VirtualKeyboard .BetterBoard-row-bottom.BetterBoard-with-specialcharacter span.BetterBoard-key-space {
   width: calc(100% - 16px - 140px - 16px - 140px - 16px - 140px - 16px);
 }
 
-#KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-space.spacebar-denied {
+#BetterBoard-VirtualKeyboard .BetterBoard-row-bottom span.BetterBoard-key-space.spacebar-denied {
   opacity: 0.4 !important;
   cursor: not-allowed !important;
 }
 
-#KioskBoard-VirtualKeyboard .kioskboard-with-specialcharacter span.kioskboard-key-specialcharacter {
+#BetterBoard-VirtualKeyboard .BetterBoard-with-specialcharacter span.BetterBoard-key-specialcharacter {
   position: relative;
   max-width: 100%;
   min-height: 60px;
@@ -278,17 +278,17 @@
   flex: 1 1 auto;
 }
 
-/* KioskBoard: Row & Keys Bottom Group: end */
+/* BetterBoard: Row & Keys Bottom Group: end */
 
-/* KioskBoard: Row & Keys Numpad Group: begin */
-#KioskBoard-VirtualKeyboard .kioskboard-row-numpad {
+/* BetterBoard: Row & Keys Numpad Group: begin */
+#BetterBoard-VirtualKeyboard .BetterBoard-row-numpad {
   display: block;
   max-width: 320px;
   margin: auto;
 }
 
 /* stylelint-disable no-descending-specificity */
-#KioskBoard-VirtualKeyboard .kioskboard-row-numpad span[class^="kioskboard-key"] {
+#BetterBoard-VirtualKeyboard .BetterBoard-row-numpad span[class^="BetterBoard-key"] {
   max-width: 100%;
   min-height: 60px;
   width: calc(33.3333% - 16px);
@@ -297,18 +297,19 @@
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
 }
+
 /* stylelint-enable no-descending-specificity */
 
-#KioskBoard-VirtualKeyboard .kioskboard-row-numpad span.kioskboard-key-last,
-#KioskBoard-VirtualKeyboard .kioskboard-row-numpad span.kioskboard-key-backspace {
+#BetterBoard-VirtualKeyboard .BetterBoard-row-numpad span.BetterBoard-key-last,
+#BetterBoard-VirtualKeyboard .BetterBoard-row-numpad span.BetterBoard-key-backspace {
   max-width: 100%;
   width: calc(50% - 16px);
 }
 
-/* KioskBoard: Row & Keys Numpad Group: end */
+/* BetterBoard: Row & Keys Numpad Group: end */
 
-/* KioskBoard: Row & Keys SpecialChar Group: begin */
-#KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters {
+/* BetterBoard: Row & Keys SpecialChar Group: begin */
+#BetterBoard-VirtualKeyboard .BetterBoard-row-specialcharacters {
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -324,12 +325,12 @@
   width: 100%;
 }
 
-#KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters.kioskboard-specialcharacter-show {
+#BetterBoard-VirtualKeyboard .BetterBoard-row-specialcharacters.BetterBoard-specialcharacter-show {
   visibility: visible;
   opacity: 1;
 }
 
-#KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters span.kioskboard-specialcharacter-close {
+#BetterBoard-VirtualKeyboard .BetterBoard-row-specialcharacters span.BetterBoard-specialcharacter-close {
   -webkit-transition: all 0.36s ease-in-out;
   -o-transition: all 0.36s ease-in-out;
   transition: all 0.36s ease-in-out;
@@ -346,7 +347,7 @@
   box-shadow: 0 0 16px -6px rgba(0, 0, 0, 0.25);
 }
 
-#KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters span.kioskboard-specialcharacter-close svg {
+#BetterBoard-VirtualKeyboard .BetterBoard-row-specialcharacters span.BetterBoard-specialcharacter-close svg {
   position: absolute;
   left: 0;
   top: 0;
@@ -358,12 +359,12 @@
   height: 16px !important;
 }
 
-#KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters span.kioskboard-specialcharacter-close:hover {
+#BetterBoard-VirtualKeyboard .BetterBoard-row-specialcharacters span.BetterBoard-specialcharacter-close:hover {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
-#KioskBoard-VirtualKeyboard .kioskboard-specialcharacters-content {
+#BetterBoard-VirtualKeyboard .BetterBoard-specialcharacters-content {
   width: 100%;
   max-height: 100%;
   padding-right: 5px;
@@ -371,52 +372,52 @@
   overflow-y: auto;
 }
 
-#KioskBoard-VirtualKeyboard .kioskboard-specialcharacters-content::-webkit-scrollbar {
+#BetterBoard-VirtualKeyboard .BetterBoard-specialcharacters-content::-webkit-scrollbar {
   height: 6px;
   width: 6px;
 }
 
-#KioskBoard-VirtualKeyboard .kioskboard-specialcharacters-content::-webkit-scrollbar-track {
+#BetterBoard-VirtualKeyboard .BetterBoard-specialcharacters-content::-webkit-scrollbar-track {
   border-radius: 3px;
   background: rgba(255, 255, 255, 0.75);
 }
 
-#KioskBoard-VirtualKeyboard .kioskboard-specialcharacters-content::-webkit-scrollbar-thumb {
+#BetterBoard-VirtualKeyboard .BetterBoard-specialcharacters-content::-webkit-scrollbar-thumb {
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
 
-#KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters span.kioskboard-key {
+#BetterBoard-VirtualKeyboard .BetterBoard-row-specialcharacters span.BetterBoard-key {
   min-width: 60px;
   min-height: 30px;
 }
 
-/* KioskBoard: Row & Keys SpecialChar Group: end */
+/* BetterBoard: Row & Keys SpecialChar Group: end */
 
-/* KioskBoard: Theme: begin */
-#KioskBoard-VirtualKeyboard.kioskboard-theme-material,
-#KioskBoard-VirtualKeyboard.kioskboard-theme-light {
+/* BetterBoard: Theme: begin */
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-material,
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-light {
   -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.25), 0 0 20px -8px rgba(0, 0, 0, 0.15);
   box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.25), 0 0 20px -8px rgba(0, 0, 0, 0.15);
   background: #e3e3e3;
   background: linear-gradient(to right bottom, #eee, #ebebeb, #e8e8e8, #e6e6e6, #e3e3e3);
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-theme-dark {
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-dark {
   -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.25), 0 0 20px -8px rgba(0, 0, 0, 0.15);
   box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.25), 0 0 20px -8px rgba(0, 0, 0, 0.15);
   background: #151515;
   background: linear-gradient(to left top, #151515, #171717, #1a1a1a, #1c1c1c, #1e1e1e);
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-theme-flat {
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-flat {
   -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.25), 0 0 20px -8px rgba(0, 0, 0, 0.15);
   box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.25), 0 0 20px -8px rgba(0, 0, 0, 0.15);
   background: #dfdfdf;
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool {
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-oldschool {
   -webkit-box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.02), 0 0 20px -8px rgba(0, 0, 0, 0.1);
   box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.02), 0 0 20px -8px rgba(0, 0, 0, 0.1);
   background: #e5e5e5;
@@ -424,13 +425,13 @@
 }
 
 /* stylelint-disable no-descending-specificity */
-#KioskBoard-VirtualKeyboard.kioskboard-theme-material .kioskboard-row span[class^="kioskboard-key"],
-#KioskBoard-VirtualKeyboard.kioskboard-theme-light .kioskboard-row span[class^="kioskboard-key"] {
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-material .BetterBoard-row span[class^="BetterBoard-key"],
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-light .BetterBoard-row span[class^="BetterBoard-key"] {
   color: #707070;
   background: #fafafa;
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-theme-dark .kioskboard-row span[class^="kioskboard-key"] {
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-dark .BetterBoard-row span[class^="BetterBoard-key"] {
   border-color: rgba(255, 255, 255, 0.02);
   border-bottom-color: rgba(255, 255, 255, 0.04);
   -webkit-box-shadow: 0 5px 0 0.05px rgba(255, 255, 255, 0.2);
@@ -439,7 +440,7 @@
   background: #323232;
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-theme-flat .kioskboard-row span[class^="kioskboard-key"] {
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-flat .BetterBoard-row span[class^="BetterBoard-key"] {
   color: #707070;
   background: #fafafa;
   border-color: #fafafa;
@@ -448,16 +449,17 @@
   box-shadow: 0 2px 0 0.05px #fafafa;
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool .kioskboard-row span[class^="kioskboard-key"] {
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-oldschool .BetterBoard-row span[class^="BetterBoard-key"] {
   color: #8f8f8f;
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
   background: #fafafa;
   -webkit-box-shadow: 0 4px 6px 0.06px rgba(0, 0, 0, 0.05);
   box-shadow: 0 4px 6px 0.06px rgba(0, 0, 0, 0.05);
 }
+
 /* stylelint-enable no-descending-specificity */
 
-#KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool .kioskboard-row span[class^="kioskboard-key"]::after {
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-oldschool .BetterBoard-row span[class^="BetterBoard-key"]::after {
   content: "";
   position: absolute;
   left: 0;
@@ -479,55 +481,55 @@
   border-bottom-width: 6px;
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool span.kioskboard-key-capslock::before {
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-oldschool span.BetterBoard-key-capslock::before {
   right: 9px;
   top: 9px;
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool span.kioskboard-key-capslock::before,
-#KioskBoard-VirtualKeyboard.kioskboard-theme-flat span.kioskboard-key-capslock::before,
-#KioskBoard-VirtualKeyboard.kioskboard-theme-light span.kioskboard-key-capslock::before {
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-oldschool span.BetterBoard-key-capslock::before,
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-flat span.BetterBoard-key-capslock::before,
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-light span.BetterBoard-key-capslock::before {
   background: #c4c4c4;
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-theme-dark span.kioskboard-key-capslock::before {
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-dark span.BetterBoard-key-capslock::before {
   background: #a9a9a9;
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-theme-material span.kioskboard-key-capslock::before {
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-material span.BetterBoard-key-capslock::before {
   background: #e6e6e6;
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool span.kioskboard-key-capslock.capslock-active::before,
-#KioskBoard-VirtualKeyboard.kioskboard-theme-flat span.kioskboard-key-capslock.capslock-active::before,
-#KioskBoard-VirtualKeyboard.kioskboard-theme-light span.kioskboard-key-capslock.capslock-active::before,
-#KioskBoard-VirtualKeyboard.kioskboard-theme-dark span.kioskboard-key-capslock.capslock-active::before,
-#KioskBoard-VirtualKeyboard.kioskboard-theme-material span.kioskboard-key-capslock.capslock-active::before {
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-oldschool span.BetterBoard-key-capslock.capslock-active::before,
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-flat span.BetterBoard-key-capslock.capslock-active::before,
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-light span.BetterBoard-key-capslock.capslock-active::before,
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-dark span.BetterBoard-key-capslock.capslock-active::before,
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-material span.BetterBoard-key-capslock.capslock-active::before {
   background: #5decaa;
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-theme-flat .kioskboard-row span[class^="kioskboard-key"] svg,
-#KioskBoard-VirtualKeyboard.kioskboard-theme-light .kioskboard-row span[class^="kioskboard-key"] svg {
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-flat .BetterBoard-row span[class^="BetterBoard-key"] svg,
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-light .BetterBoard-row span[class^="BetterBoard-key"] svg {
   fill: #707070 !important;
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-theme-dark .kioskboard-row span[class^="kioskboard-key"] svg {
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-dark .BetterBoard-row span[class^="BetterBoard-key"] svg {
   fill: #a9a9a9 !important;
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool .kioskboard-row span[class^="kioskboard-key"] svg {
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-oldschool .BetterBoard-row span[class^="BetterBoard-key"] svg {
   left: 12px;
   fill: #a1a1a1 !important;
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-theme-material .kioskboard-row span[class^="kioskboard-key"] svg {
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-material .BetterBoard-row span[class^="BetterBoard-key"] svg {
   fill: #fafafa !important;
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-theme-material .kioskboard-row-numpad span.kioskboard-key-backspace,
-#KioskBoard-VirtualKeyboard.kioskboard-theme-material .kioskboard-row-bottom span.kioskboard-key-specialcharacter,
-#KioskBoard-VirtualKeyboard.kioskboard-theme-material .kioskboard-row-bottom span.kioskboard-key-capslock,
-#KioskBoard-VirtualKeyboard.kioskboard-theme-material .kioskboard-row-bottom span.kioskboard-key-backspace {
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-material .BetterBoard-row-numpad span.BetterBoard-key-backspace,
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-material .BetterBoard-row-bottom span.BetterBoard-key-specialcharacter,
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-material .BetterBoard-row-bottom span.BetterBoard-key-capslock,
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-material .BetterBoard-row-bottom span.BetterBoard-key-backspace {
   -webkit-box-shadow: 0 4px 0 0.04px rgba(0, 0, 0, 0.3);
   box-shadow: 0 4px 0 0.04px rgba(0, 0, 0, 0.3);
   border-bottom-color: rgba(0, 0, 0, 0.03);
@@ -536,32 +538,33 @@
 }
 
 /* stylelint-disable no-descending-specificity */
-#KioskBoard-VirtualKeyboard.kioskboard-theme-flat span.kioskboard-specialcharacter-close,
-#KioskBoard-VirtualKeyboard.kioskboard-theme-material span.kioskboard-specialcharacter-close,
-#KioskBoard-VirtualKeyboard.kioskboard-theme-light span.kioskboard-specialcharacter-close,
-#KioskBoard-VirtualKeyboard.kioskboard-theme-oldschool span.kioskboard-specialcharacter-close {
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-flat span.BetterBoard-specialcharacter-close,
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-material span.BetterBoard-specialcharacter-close,
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-light span.BetterBoard-specialcharacter-close,
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-oldschool span.BetterBoard-specialcharacter-close {
   background: #a9a9a9;
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-theme-dark span.kioskboard-specialcharacter-close {
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-dark span.BetterBoard-specialcharacter-close {
   background: #323232;
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-theme-dark span.kioskboard-specialcharacter-close svg {
+#BetterBoard-VirtualKeyboard.BetterBoard-theme-dark span.BetterBoard-specialcharacter-close svg {
   fill: #b7b7b7 !important;
 }
+
 /* stylelint-enable no-descending-specificity */
 
-/* KioskBoard: Theme: end */
+/* BetterBoard: Theme: end */
 
-/* KioskBoard: Responsive: begin */
+/* BetterBoard: Responsive: begin */
 @media only screen and (max-width: 767px) {
-  #KioskBoard-VirtualKeyboard {
+  #BetterBoard-VirtualKeyboard {
     min-height: 210px;
     padding: 12px 6px;
   }
 
-  #KioskBoard-VirtualKeyboard .kioskboard-row span[class^="kioskboard-key"] {
+  #BetterBoard-VirtualKeyboard .BetterBoard-row span[class^="BetterBoard-key"] {
     font-size: 13px !important;
     margin: 2px 2px 12px;
     padding: 8px 0;
@@ -579,7 +582,7 @@
     border-radius: 4px;
   }
 
-  #KioskBoard-VirtualKeyboard .kioskboard-row-numpad span[class^="kioskboard-key"] {
+  #BetterBoard-VirtualKeyboard .BetterBoard-row-numpad span[class^="BetterBoard-key"] {
     margin: 4px 4px 12px;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
@@ -590,26 +593,26 @@
     min-height: 55px;
   }
 
-  #KioskBoard-VirtualKeyboard .kioskboard-row-numpad span.kioskboard-key-last,
-  #KioskBoard-VirtualKeyboard .kioskboard-row-numpad span.kioskboard-key-backspace {
+  #BetterBoard-VirtualKeyboard .BetterBoard-row-numpad span.BetterBoard-key-last,
+  #BetterBoard-VirtualKeyboard .BetterBoard-row-numpad span.BetterBoard-key-backspace {
     width: calc(50% - 20px);
   }
 
-  #KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-backspace,
-  #KioskBoard-VirtualKeyboard .kioskboard-with-specialcharacter span.kioskboard-key-specialcharacter,
-  #KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-capslock {
+  #BetterBoard-VirtualKeyboard .BetterBoard-row-bottom span.BetterBoard-key-backspace,
+  #BetterBoard-VirtualKeyboard .BetterBoard-with-specialcharacter span.BetterBoard-key-specialcharacter,
+  #BetterBoard-VirtualKeyboard .BetterBoard-row-bottom span.BetterBoard-key-capslock {
     max-width: 60px;
     min-height: 45px;
     margin-bottom: 4px;
   }
 
-  #KioskBoard-VirtualKeyboard .kioskboard-row-bottom span.kioskboard-key-space {
+  #BetterBoard-VirtualKeyboard .BetterBoard-row-bottom span.BetterBoard-key-space {
     padding-top: 10px;
     min-height: 45px;
     margin-bottom: 4px;
   }
 
-  #KioskBoard-VirtualKeyboard .kioskboard-row span[class^="kioskboard-key"] svg {
+  #BetterBoard-VirtualKeyboard .BetterBoard-row span[class^="BetterBoard-key"] svg {
     -webkit-transform: scale(0.7);
     transform: scale(0.7);
     -webkit-transform-origin: left top;
@@ -618,7 +621,7 @@
     top: 8px;
   }
 
-  #KioskBoard-VirtualKeyboard .kioskboard-row-numpad span[class^="kioskboard-key"] svg {
+  #BetterBoard-VirtualKeyboard .BetterBoard-row-numpad span[class^="BetterBoard-key"] svg {
     top: 0;
     left: 18px;
     bottom: 0;
@@ -629,11 +632,11 @@
     transform-origin: center center;
   }
 
-  #KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters {
+  #BetterBoard-VirtualKeyboard .BetterBoard-row-specialcharacters {
     padding: 15px 15px 10px;
   }
 
-  #KioskBoard-VirtualKeyboard .kioskboard-row-specialcharacters span.kioskboard-specialcharacter-close {
+  #BetterBoard-VirtualKeyboard .BetterBoard-row-specialcharacters span.BetterBoard-specialcharacter-close {
     width: 30px;
     height: 30px;
     top: -27px;
@@ -641,16 +644,16 @@
   }
 }
 
-/* KioskBoard: Responsive: end */
+/* BetterBoard: Responsive: end */
 
-/* KioskBoard: Animations: begin */
-#KioskBoard-VirtualKeyboard.kioskboard-with-animation.kioskboard-fade {
+/* BetterBoard: Animations: begin */
+#BetterBoard-VirtualKeyboard.BetterBoard-with-animation.BetterBoard-fade {
   opacity: 1;
-  -webkit-animation: kioskboard-animation-fade 0.36s ease-in-out 0s normal;
-  animation: kioskboard-animation-fade 0.36s ease-in-out 0s normal;
+  -webkit-animation: BetterBoard-animation-fade 0.36s ease-in-out 0s normal;
+  animation: BetterBoard-animation-fade 0.36s ease-in-out 0s normal;
 }
 
-@-webkit-keyframes kioskboard-animation-fade {
+@-webkit-keyframes BetterBoard-animation-fade {
   0% {
     opacity: 0;
   }
@@ -660,7 +663,7 @@
   }
 }
 
-@keyframes kioskboard-animation-fade {
+@keyframes BetterBoard-animation-fade {
   0% {
     opacity: 0;
   }
@@ -670,13 +673,13 @@
   }
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-with-animation.kioskboard-fade.kioskboard-fade-remove {
+#BetterBoard-VirtualKeyboard.BetterBoard-with-animation.BetterBoard-fade.BetterBoard-fade-remove {
   opacity: 0;
-  -webkit-animation: kioskboard-animation-fade-remove 0.36s ease-in-out 0s normal;
-  animation: kioskboard-animation-fade-remove 0.36s ease-in-out 0s normal;
+  -webkit-animation: BetterBoard-animation-fade-remove 0.36s ease-in-out 0s normal;
+  animation: BetterBoard-animation-fade-remove 0.36s ease-in-out 0s normal;
 }
 
-@-webkit-keyframes kioskboard-animation-fade-remove {
+@-webkit-keyframes BetterBoard-animation-fade-remove {
   0% {
     opacity: 1;
   }
@@ -686,7 +689,7 @@
   }
 }
 
-@keyframes kioskboard-animation-fade-remove {
+@keyframes BetterBoard-animation-fade-remove {
   0% {
     opacity: 1;
   }
@@ -696,13 +699,13 @@
   }
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-with-animation.kioskboard-placement-bottom.kioskboard-slide {
+#BetterBoard-VirtualKeyboard.BetterBoard-with-animation.BetterBoard-placement-bottom.BetterBoard-slide {
   bottom: 0;
-  -webkit-animation: kioskboard-animation-slide-bottom 1.2s ease-in-out 0s normal;
-  animation: kioskboard-animation-slide-bottom 1.2s ease-in-out 0s normal;
+  -webkit-animation: BetterBoard-animation-slide-bottom 1.2s ease-in-out 0s normal;
+  animation: BetterBoard-animation-slide-bottom 1.2s ease-in-out 0s normal;
 }
 
-@-webkit-keyframes kioskboard-animation-slide-bottom {
+@-webkit-keyframes BetterBoard-animation-slide-bottom {
   0% {
     bottom: -100%;
   }
@@ -712,7 +715,7 @@
   }
 }
 
-@keyframes kioskboard-animation-slide-bottom {
+@keyframes BetterBoard-animation-slide-bottom {
   0% {
     bottom: -100%;
   }
@@ -722,13 +725,13 @@
   }
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-with-animation.kioskboard-slide.kioskboard-placement-bottom.kioskboard-slide-remove {
+#BetterBoard-VirtualKeyboard.BetterBoard-with-animation.BetterBoard-slide.BetterBoard-placement-bottom.BetterBoard-slide-remove {
   bottom: -100%;
-  -webkit-animation: kioskboard-animation-slide-bottom-remove 1.2s ease-in-out 0s normal;
-  animation: kioskboard-animation-slide-bottom-remove 1.2s ease-in-out 0s normal;
+  -webkit-animation: BetterBoard-animation-slide-bottom-remove 1.2s ease-in-out 0s normal;
+  animation: BetterBoard-animation-slide-bottom-remove 1.2s ease-in-out 0s normal;
 }
 
-@-webkit-keyframes kioskboard-animation-slide-bottom-remove {
+@-webkit-keyframes BetterBoard-animation-slide-bottom-remove {
   0% {
     bottom: 0;
   }
@@ -738,7 +741,7 @@
   }
 }
 
-@keyframes kioskboard-animation-slide-bottom-remove {
+@keyframes BetterBoard-animation-slide-bottom-remove {
   0% {
     bottom: 0;
   }
@@ -748,13 +751,13 @@
   }
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-with-animation.kioskboard-placement-top.kioskboard-slide {
+#BetterBoard-VirtualKeyboard.BetterBoard-with-animation.BetterBoard-placement-top.BetterBoard-slide {
   top: 0;
-  -webkit-animation: kioskboard-animation-slide-top 1.2s ease-in-out 0s normal;
-  animation: kioskboard-animation-slide-top 1.2s ease-in-out 0s normal;
+  -webkit-animation: BetterBoard-animation-slide-top 1.2s ease-in-out 0s normal;
+  animation: BetterBoard-animation-slide-top 1.2s ease-in-out 0s normal;
 }
 
-@-webkit-keyframes kioskboard-animation-slide-top {
+@-webkit-keyframes BetterBoard-animation-slide-top {
   0% {
     top: -100%;
   }
@@ -764,7 +767,7 @@
   }
 }
 
-@keyframes kioskboard-animation-slide-top {
+@keyframes BetterBoard-animation-slide-top {
   0% {
     top: -100%;
   }
@@ -774,13 +777,13 @@
   }
 }
 
-#KioskBoard-VirtualKeyboard.kioskboard-with-animation.kioskboard-slide.kioskboard-placement-top.kioskboard-slide-remove {
+#BetterBoard-VirtualKeyboard.BetterBoard-with-animation.BetterBoard-slide.BetterBoard-placement-top.BetterBoard-slide-remove {
   top: -100%;
-  -webkit-animation: kioskboard-animation-slide-top-remove 1.2s ease-in-out 0s normal;
-  animation: kioskboard-animation-slide-top-remove 1.2s ease-in-out 0s normal;
+  -webkit-animation: BetterBoard-animation-slide-top-remove 1.2s ease-in-out 0s normal;
+  animation: BetterBoard-animation-slide-top-remove 1.2s ease-in-out 0s normal;
 }
 
-@-webkit-keyframes kioskboard-animation-slide-top-remove {
+@-webkit-keyframes BetterBoard-animation-slide-top-remove {
   0% {
     top: 0;
   }
@@ -790,7 +793,7 @@
   }
 }
 
-@keyframes kioskboard-animation-slide-top-remove {
+@keyframes BetterBoard-animation-slide-top-remove {
   0% {
     top: 0;
   }
@@ -800,4 +803,4 @@
   }
 }
 
-/* KioskBoard: Animations: end */
+/* BetterBoard: Animations: end */

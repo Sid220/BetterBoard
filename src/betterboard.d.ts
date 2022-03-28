@@ -1,3 +1,3 @@
-import BetterBoard from '../index.d';
+import BetterBoard from '..';
 export = BetterBoard;
 export as namespace BetterBoard;

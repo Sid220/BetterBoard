@@ -1,6 +1,6 @@
-import KioskBoard from 'index.d';
+import BetterBoard from 'index.d';
 
-KioskBoard.init({
+BetterBoard.init({
   keysArrayOfObjects: [
     {
       "0": "S",
@@ -24,7 +24,7 @@ KioskBoard.init({
       "6": "S",
     },
   ],
-  keysJsonUrl: '/Content/Plugins/KioskBoard/dist/kioskboard-keys-english.json',
+  keysJsonUrl: '/Content/Plugins/BetterBoard/dist/BetterBoard-keys-english.json',
   keysSpecialCharsArrayOfStrings: ["#", "€", "%", "+", "-", "*"],
   keysNumpadArrayOfNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
   language: 'en',
@@ -42,9 +42,10 @@ KioskBoard.init({
   keysFontWeight: 'normal',
   keysIconSize: '25px',
   autoScroll: true,
+  moveBody: true,
 });
 
-KioskBoard.run('.js-kioskboard', {
+BetterBoard.run('.js-BetterBoard', {
   keysArrayOfObjects: [
     {
       "0": "S",
@@ -74,8 +75,8 @@ KioskBoard.run('.js-kioskboard', {
   theme: 'dark',
 });
 
-const input = window.document.querySelector('.js-kioskboard') as HTMLInputElement;
-KioskBoard.run(input, {
+const input = window.document.querySelector('.js-BetterBoard') as HTMLInputElement;
+BetterBoard.run(input, {
   keysArrayOfObjects: [
     {
       "0": "F",

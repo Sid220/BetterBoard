@@ -1,7 +1,7 @@
 /*!
 * All In One Generator
 *
-* Description: Creates "kioskboard-aio.js" file automatically from "kioskboard.js" and "kioskboard.css" files.
+* Description: Creates "BetterBoard-aio.js" file automatically from "BetterBoard.js" and "BetterBoard.css" files.
 * Version: 2.1.0
 * Author: Furkan MT ('https://github.com/furcan')
 * Copyright 2022 All In One Generator, MIT Licence ('https://opensource.org/licenses/MIT')
@@ -43,13 +43,13 @@ const getFileContentAsTextByType = (filePath, fileType, clean) => {
 };
 // Get File content as text: end
 
-// Create "kioskboard-aio.js" file from "kioskboard.js" and "kioskboard.css" files: begin
+// Create "BetterBoard-aio.js" file from "BetterBoard.js" and "BetterBoard.css" files: begin
 const createAIOfileFromJsAndCss = () => {
-  // kioskboard style as minified
+  // BetterBoard style as minified
   const stylePath = join(Constants.dirInputDev, Constants.fileStyle);
   const styleAsMinified = getFileContentAsTextByType(stylePath, 'style', true);
 
-  // kioskboard script
+  // BetterBoard script
   const scriptPath = join(Constants.dirInputDev, Constants.fileScript);
   const scriptAsNormal = getFileContentAsTextByType(scriptPath, 'script', false);
 
@@ -58,7 +58,7 @@ const createAIOfileFromJsAndCss = () => {
     // if output directory is exist
     if (existsSync(Constants.dirOutputDev)) {
       const commentVersion = `* Version:`;
-      const commentDescAndVersion = `* Description: This file contains the KioskBoard CSS codes as internal to use the KioskBoard as one file. This file has been created automatically from using the "kioskboard.js", and "kioskboard.css" files.\n${commentVersion}`;
+      const commentDescAndVersion = `* Description: This file contains the BetterBoard CSS codes as internal to use the BetterBoard as one file. This file has been created automatically from using the "BetterBoard.js", and "BetterBoard.css" files.\n${commentVersion}`;
       const internalCSS = `var internalCSS = '';`;
       // add a description comment before the version && replace internal css codes => if they exist
       if (scriptAsNormal.indexOf(commentVersion) > -1 && scriptAsNormal.indexOf(internalCSS) > -1) {
@@ -66,7 +66,7 @@ const createAIOfileFromJsAndCss = () => {
         let scriptAsNormalAIO = scriptAsNormal.replace(commentVersion, commentDescAndVersion);
         // replace internal css
         scriptAsNormalAIO = scriptAsNormalAIO.replace(internalCSS, `var internalCSS = '${styleAsMinified}';`);
-        // create "kioskboard-aio.js" file
+        // create "BetterBoard-aio.js" file
         writeFileSync(join(Constants.dirOutputDev, Constants.fileScriptAIO), scriptAsNormalAIO);
       } else {
         Constants.terminalError(`"${scriptAsNormal.indexOf(commentVersion) === -1 ? commentVersion : internalCSS}" does not exist in the "${Constants.fileScript}" file.`, `${thisFilePath} => Line: 72`);
@@ -84,4 +84,4 @@ const createAIOfileFromJsAndCss = () => {
   }
 };
 createAIOfileFromJsAndCss();
-// Create "kioskboard-aio.js" file from "kioskboard.js" and "kioskboard.css" files: end
+// Create "BetterBoard-aio.js" file from "BetterBoard.js" and "BetterBoard.css" files: end

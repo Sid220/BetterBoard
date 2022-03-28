@@ -1,7 +1,7 @@
 /*!
 * Minifier
 *
-* Description: Minify the KioskBoard scripts, and clean the KioskBoard styles to the distribution. (Used "Babel Minify", and "Clean CSS")
+* Description: Minify the BetterBoard scripts, and clean the BetterBoard styles to the distribution. (Used "Babel Minify", and "Clean CSS")
 * Version: 2.1.0
 * Author: Furkan MT ('https://github.com/furcan')
 * Copyright 2022 Minifier, MIT Licence ('https://opensource.org/licenses/MIT')
@@ -51,7 +51,7 @@ const minifiedCodeBySourceType = (text, type) => {
 // Write The File Into The Output Directory: begin
 const writeFileToTheOutDir = (minContent, fileName, filePath) => {
   if (existsSync(Constants.dirOutputDist)) {
-    // create "kioskboard.min.*" file by minified content
+    // create "BetterBoard.min.*" file by minified content
     if (typeof minContent === 'object' && (typeof minContent.type === 'string' && (typeof minContent.code === 'string' && minContent.code.length > 0))) {
       // file extention
       let ext = null;

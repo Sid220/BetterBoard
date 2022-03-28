@@ -1,23 +1,23 @@
 /*!
-* KioskBoard - Virtual Keyboard ('https://github.com/furcan/KioskBoard')
+* BetterBoard - Virtual Keyboard ('https://github.com/furcan/BetterBoard')
 * Version: 2.1.0
 * Description: TypeScript Declaration.
 * Author: Furkan MT ('https://github.com/furcan')
-* Copyright 2022 KioskBoard - Virtual Keyboard, MIT Licence ('https://opensource.org/licenses/MIT')*
+* Copyright 2022 BetterBoard - Virtual Keyboard, MIT Licence ('https://opensource.org/licenses/MIT')*
 */
 
 /**
-  * KioskBoard is a pure JavaScript library for using virtual keyboards.
-  * @namespace KioskBoard
+  * BetterBoard is a pure JavaScript library for using virtual keyboards.
+  * @namespace BetterBoard
   * @memberof Global
   */
-declare namespace KioskBoard {
+declare namespace BetterBoard {
 
   /**
-   * @interface IKioskBoardOptions
-   * @memberof KioskBoard
+   * @interface IBetterBoardOptions
+   * @memberof BetterBoard
    */
-  export interface IKioskBoardOptions {
+  export interface IBetterBoardOptions {
 
     /**
      * @property {Array<Object>} - Required, An Array of Objects has to be defined for the custom keys.
@@ -33,9 +33,9 @@ declare namespace KioskBoard {
      * @property {string} - Required only if `keysArrayOfObjects` option is `null`.
      * @defaultValue `null`
      *
-     * The path of the "kioskboard-keys-${langugage}.json" file must be set to the "keysJsonUrl" option. (XMLHttpRequest to get the keys from JSON file.)
+     * The path of the "BetterBoard-keys-${langugage}.json" file must be set to the "keysJsonUrl" option. (XMLHttpRequest to get the keys from JSON file.)
      *
-     * e.g. '/Content/Plugins/KioskBoard/dist/kioskboard-keys-english.json'
+     * e.g. '/Content/Plugins/BetterBoard/dist/BetterBoard-keys-english.json'
      */
     keysJsonUrl?: string;
 
@@ -71,10 +71,15 @@ declare namespace KioskBoard {
 
     /**
      * @property {boolean} - Optional, Uppercase or lowercase to start. Uppercased when `true`.
-     * @defaultValue `true`
+     * @defaultValue `false`
      */
     capsLockActive?: boolean;
 
+    /**
+     * @property {boolean} - Optional, Whether or not to add padding to the body when the keyboard is open. Not added when `false`.
+     * @defaultValue `false`
+     */
+    moveBody?: boolean;
     /**
      * @property {boolean} - Optional, Allow or prevent real/physical keyboard usage. Prevented when `false`.
      * @defaultValue `false`
@@ -151,26 +156,26 @@ declare namespace KioskBoard {
   }
 
   /**
-    * This method can be used to set custom options globally for KioskBoard.
+    * This method can be used to set custom options globally for BetterBoard.
     * @function init
-    * @memberof KioskBoard
-    * @param {Object} initOptions - Required, `KioskBoard.IKioskBoardOptions`.
+    * @memberof BetterBoard
+    * @param {Object} initOptions - Required, `BetterBoard.IBetterBoardOptions`.
     */
-  function init(initOptions: IKioskBoardOptions): void;
+  function init(initOptions: IBetterBoardOptions): void;
 
   /**
-    * This method can be used to use KioskBoard on the selected `input` and/or `textarea` elements.
+    * This method can be used to use BetterBoard on the selected `input` and/or `textarea` elements.
     * @function run
-    * @memberof KioskBoard
+    * @memberof BetterBoard
     * @param {string | HTMLInputElement | HTMLTextAreaElement } selectorOrElement - Required, CSS selector(s) that matches the element(s) or an `input`/`textarea` element.
-    * @param {Object} initOptions - Required, `KioskBoard.IKioskBoardOptions`.
+    * @param {Object} initOptions - Required, `BetterBoard.IBetterBoardOptions`.
     */
   function run(
     selectorOrElement: string | HTMLInputElement | HTMLTextAreaElement,
-    initOptions: IKioskBoardOptions,
+    initOptions: IBetterBoardOptions,
   ): void;
 
 }
 
-export = KioskBoard;
-export as namespace KioskBoard;
+export = BetterBoard;
+export as namespace BetterBoard;

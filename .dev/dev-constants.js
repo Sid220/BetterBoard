@@ -55,17 +55,17 @@ const terminalError = (message, fileOrPath) => {
 
 // - Exports: begin
 module.exports = {
-  prefix: 'kioskboard',
+  prefix: 'BetterBoard',
   dirInputDev: 'src',
   dirOutputDev: 'build',
   dirOutputDist: 'dist',
-  fileScript: 'kioskboard.js',
-  fileStyle: 'kioskboard.css',
-  fileScriptAIO: 'kioskboard-aio.js',
+  fileScript: 'BetterBoard.js',
+  fileStyle: 'BetterBoard.css',
+  fileScriptAIO: 'BetterBoard-aio.js',
   version: (JSON.stringify((package || {}).version) || '').replace(/"/gm, ''),
   author: (JSON.stringify((package || {}).author) || '').replace(/"/gm, ''),
-  title: 'KioskBoard - Virtual Keyboard',
-  url: '(https://github.com/furcan/KioskBoard)',
+  title: 'BetterBoard - Virtual Keyboard',
+  url: '(https://github.com/furcan/BetterBoard)',
   license: 'MIT Licence (https://opensource.org/licenses/MIT)',
   year: new Date().getFullYear() || '2022',
   cleanCSSOptions,

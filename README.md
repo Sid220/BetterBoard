@@ -1,33 +1,33 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/furcan/KioskBoard/main/docs/github-cover.png" width="640" height="auto" alt="KioskBoard">
+  <img src="https://raw.githubusercontent.com/furcan/BetterBoard/main/docs/github-cover.png" width="640" height="auto" alt="BetterBoard">
 </p>
 
-[npm-version-badge]: https://img.shields.io/npm/v/kioskboard.svg
-[npm-version-url]: https://www.npmjs.com/package/kioskboard
-[synk-badge]: https://snyk.io/test/github/furcan/KioskBoard/badge.svg?targetFile=package.json
-[synk-url]: https://snyk.io/test/github/furcan/KioskBoard?targetFile=package.json
+[npm-version-badge]: https://img.shields.io/npm/v/BetterBoard.svg
+[npm-version-url]: https://www.npmjs.com/package/BetterBoard
+[synk-badge]: https://snyk.io/test/github/furcan/BetterBoard/badge.svg?targetFile=package.json
+[synk-url]: https://snyk.io/test/github/furcan/BetterBoard?targetFile=package.json
 [typescript-badge]: https://badgen.net/badge/icon/Typed?icon=typescript&label&labelColor=3178c6&color=555
-[typescript-url]: https://github.com/furcan/KioskBoard/blob/main/index.d.ts
-[lic-badge]: https://img.shields.io/github/license/furcan/KioskBoard.svg
-[lic-url]: https://github.com/furcan/KioskBoard/blob/main/LICENSE
+[typescript-url]: https://github.com/furcan/BetterBoard/blob/main/index.d.ts
+[lic-badge]: https://img.shields.io/github/license/furcan/BetterBoard.svg
+[lic-url]: https://github.com/furcan/BetterBoard/blob/main/LICENSE
 
 [![NPM Version][npm-version-badge]][npm-version-url]
 [![Known Vulnerabilities][synk-badge]][synk-url]
 [![TypeScript][typescript-badge]][typescript-url]
 [![License][lic-badge]][lic-url]
 
-# KioskBoard - Virtual Keyboard
+# BetterBoard - Virtual Keyboard
 A pure JavaScript library for using virtual keyboards.
 
 ---------
 
 ## Current Version
-2.1.0 [*](https://github.com/furcan/KioskBoard/blob/main/CHANGELOG.md)
+2.1.0 [*](https://github.com/furcan/BetterBoard/blob/main/CHANGELOG.md)
 
 ---------
 
 ## Documentation and Demo
-https://furcan.github.io/KioskBoard/
+https://furcan.github.io/BetterBoard/
 
 ---------
 
@@ -38,19 +38,19 @@ https://furcan.github.io/KioskBoard/
 ## (A) Install & Import
 
 ### Install
-#### [yarn](https://yarnpkg.com/package/kioskboard)
+#### [yarn](https://yarnpkg.com/package/BetterBoard)
 ```js
-yarn add kioskboard
+yarn add BetterBoard
 ```
 
-#### [npm](https://www.npmjs.com/package/kioskboard)
+#### [npm](https://www.npmjs.com/package/BetterBoard)
 ```js
-npm i kioskboard
+npm i BetterBoard
 ```
 ### Import
 
 ```jsx
-import KioskBoard from 'kioskboard';
+import BetterBoard from 'BetterBoard';
 ```
 
 ---------
@@ -59,15 +59,15 @@ import KioskBoard from 'kioskboard';
 ### CSS and JS
 
 ```html
-<link rel="stylesheet" href="dist/kioskboard-2.1.0.min.css" />
+<link rel="stylesheet" href="dist/BetterBoard-2.1.0.min.css" />
 
-<script src="dist/kioskboard-2.1.0.min.js"></script>
+<script src="dist/BetterBoard-2.1.0.min.js"></script>
 ```
 
 ### Or only JS (All in One - Internal CSS)
 
 ```html
-<script src="dist/kioskboard-aio-2.1.0.min.js"></script>
+<script src="dist/BetterBoard-aio-2.1.0.min.js"></script>
 ```
 
 ---------
@@ -81,24 +81,24 @@ import KioskBoard from 'kioskboard';
 ---------
 
 ## Run / Initialize
-KioskBoard Virtual Keyboard can be used with the `input` or `textarea` elements.
+BetterBoard Virtual Keyboard can be used with the `input` or `textarea` elements.
 
-KioskBoard must be initialized with the required options. The other ones are optional. Keyboard Type (the default value is "all") `data-kioskboard-type`, Keyboard Placement (the default value is "bottom") `data-kioskboard-placement`, and Special Characters `data-kioskboard-specialcharacters` settings are each element-based (data attributes).
+BetterBoard must be initialized with the required options. The other ones are optional. Keyboard Type (the default value is "all") `data-BetterBoard-type`, Keyboard Placement (the default value is "bottom") `data-BetterBoard-placement`, and Special Characters `data-BetterBoard-specialcharacters` settings are each element-based (data attributes).
 
-All options and examples of data attribute usages are as below. Also, a custom class name can be defined as globally for all input and/or textarea elements to run KioskBoard.
+All options and examples of data attribute usages are as below. Also, a custom class name can be defined as globally for all input and/or textarea elements to run BetterBoard.
 
 ---------
 
 ### HTML => (data-* options)
 ```html
 <!-- An example of a textarea element: The keyboard type is "all", the placement is "top", and the availability of the special characters is "true". -->
-<textarea class="js-virtual-keyboard" data-kioskboard-type="all" data-kioskboard-placement="top" data-kioskboard-specialcharacters="true" placeholder="Your Address"></textarea>
+<textarea class="js-virtual-keyboard" data-BetterBoard-type="all" data-BetterBoard-placement="top" data-BetterBoard-specialcharacters="true" placeholder="Your Address"></textarea>
 
 <!-- An example of an input element: The keyboard type is "keyboard", the placement is "bottom", and the availability of the special characters is "false". -->
-<input class="js-virtual-keyboard" data-kioskboard-type="keyboard" data-kioskboard-placement="bottom" data-kioskboard-specialcharacters="false" placeholder="Your Name" />
+<input class="js-virtual-keyboard" data-BetterBoard-type="keyboard" data-BetterBoard-placement="bottom" data-BetterBoard-specialcharacters="false" placeholder="Your Name" />
 
 <!-- An example of an input element: The keyboard type is "numpad", and the placement is "bottom". (Special characters are not allowed for "numpad".) -->
-<input class="js-virtual-keyboard" data-kioskboard-type="numpad" data-kioskboard-placement="bottom" placeholder="Your Number" />
+<input class="js-virtual-keyboard" data-BetterBoard-type="numpad" data-BetterBoard-placement="bottom" placeholder="Your Number" />
 ```
 
 ---------
@@ -106,9 +106,9 @@ All options and examples of data attribute usages are as below. Also, a custom c
 ### JS => (Run with Init)
 
 ```js
-// Select the input or the textarea element(s) to run the KioskBoard
+// Select the input or the textarea element(s) to run the BetterBoard
 
-KioskBoard.run('.js-virtual-keyboard', {
+BetterBoard.run('.js-virtual-keyboard', {
    // ...init options
 });
 ```
@@ -118,9 +118,9 @@ KioskBoard.run('.js-virtual-keyboard', {
 ### JS => (Step1: Initialize)
 
 ```js
-// Initialize KioskBoard (default/all options)
+// Initialize BetterBoard (default/all options)
 
-KioskBoard.init({
+BetterBoard.init({
 
   /*!
   * Required
@@ -131,8 +131,8 @@ KioskBoard.init({
 
   /*!
   * Required only if "keysArrayOfObjects" is "null".
-  * The path of the "kioskboard-keys-${langugage}.json" file must be set to the "keysJsonUrl" option. (XMLHttpRequest to get the keys from JSON file.)
-  * e.g. '/Content/Plugins/KioskBoard/dist/kioskboard-keys-english.json'
+  * The path of the "BetterBoard-keys-${langugage}.json" file must be set to the "keysJsonUrl" option. (XMLHttpRequest to get the keys from JSON file.)
+  * e.g. '/Content/Plugins/BetterBoard/dist/BetterBoard-keys-english.json'
   */
   keysJsonUrl: null,
 
@@ -203,9 +203,9 @@ KioskBoard.init({
 ### JS => (Step2: Run)
 
 ```js
-// Select the input or the textarea element(s) to run the KioskBoard
+// Select the input or the textarea element(s) to run the BetterBoard
 
-KioskBoard.run('.js-virtual-keyboard');
+BetterBoard.run('.js-virtual-keyboard');
 ```
 
 ---------
@@ -213,7 +213,7 @@ KioskBoard.run('.js-virtual-keyboard');
 ## Language (JSON)
 The `keysJsonUrl` option has to be set if custom keys are not defined with the `keysArrayOfObjects` option. JSON format has to be: `[{"key":"value", "key":"value"}, ...]`. Each object in that array creates a row element (HTML) on the keyboard. The "key" in the objects is used as an "index" for each Keyboard Keys. The "value" is each key's value and inner text.
 
-Additionally, KioskBoard includes 9 different language packages: `Arabic`, `English`, `French`, `German`, `Hungarian`, `Persian`, `Russian`, `Spanish`, and `Turkish`.
+Additionally, BetterBoard includes 9 different language packages: `Arabic`, `English`, `French`, `German`, `Hungarian`, `Persian`, `Russian`, `Spanish`, and `Turkish`.
 
 An example of a JSON file (for custom keys) in English.
 ```json
@@ -259,7 +259,7 @@ An example of a JSON file (for custom keys) in English.
 ---------
 
 ## Copyright
-Copyright © 2022 KioskBoard - Virtual Keyboard
+Copyright © 2022 BetterBoard - Virtual Keyboard
 
 ## License
 MIT license - https://opensource.org/licenses/MIT

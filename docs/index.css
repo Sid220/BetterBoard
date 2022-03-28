@@ -1,8 +1,8 @@
 /*!
-* KioskBoard - Virtual Keyboard ('https://github.com/furcan/KioskBoard')
+* BetterBoard - Virtual Keyboard ('https://github.com/furcan/BetterBoard')
 * Version: 2.1.0
 * Author: Furkan MT ('https://github.com/furcan')
-* Copyright 2022 KioskBoard - Virtual Keyboard, MIT Licence ('https://opensource.org/licenses/MIT')*
+* Copyright 2022 BetterBoard - Virtual Keyboard, MIT Licence ('https://opensource.org/licenses/MIT')*
 */
 
 /* Reset on */
@@ -134,9 +134,11 @@ img {
   height: 4px;
   width: 4px;
 }
+
 ::-webkit-scrollbar-track {
   background: #1e1e1e;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #5decaa;
   cursor: pointer;
@@ -160,6 +162,7 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: auto;
   max-width: 1240px;
 }
+
 /* Reset off */
 
 /* Header on */
@@ -191,6 +194,7 @@ header#Header a#Logo span.title {
   float: left;
   width: 100%;
 }
+
 header#Header a#Logo span.title i {
   transform: scale(0.85);
   min-width: 25px;
@@ -209,7 +213,7 @@ header#Header a#Logo span.desc {
   width: 100%;
 }
 
-header#Header .get-kioskboard {
+header#Header .get-BetterBoard {
   float: right;
   width: 200px;
   height: 70px;
@@ -219,7 +223,7 @@ header#Header .get-kioskboard {
   border-radius: 100px 0 0 100px;
 }
 
-header#Header .get-kioskboard a {
+header#Header .get-BetterBoard a {
   font-size: 30px;
   line-height: 30px;
   display: inline-table;
@@ -227,9 +231,10 @@ header#Header .get-kioskboard a {
   color: #3a3a3a;
 }
 
-header#Header .get-kioskboard a.npm {
+header#Header .get-BetterBoard a.npm {
   transform: scale(1.5);
 }
+
 /* Header off */
 
 /* Slider on */
@@ -333,6 +338,7 @@ section#Slider .slider-content.slider-info .version {
     box-shadow: 0 0 0 10px rgba(93, 236, 170, 0);
   }
 }
+
 @-webkit-keyframes version-highlighter-animation {
   to {
     box-shadow: 0 0 0 10px rgba(93, 236, 170, 0);
@@ -394,6 +400,7 @@ section#Slider .browser-compatibility ul.bc-ul li span {
   line-height: 11px;
   text-align: center;
 }
+
 /* Slider off */
 
 /* Sections on */
@@ -458,6 +465,7 @@ section.sections .head .sec-desc span.option {
   border-radius: 20px;
   background: #5decaa;
 }
+
 section.sections .head .sec-desc span.option.num {
   background: #525252;
   color: #fff;
@@ -467,6 +475,7 @@ section.sections .section-content {
   float: left;
   width: 100%;
 }
+
 /* Sections off */
 
 /* Sections: Keyboard Types and Themes on */
@@ -561,6 +570,7 @@ section#KeyboardThemes .keyboard-themes .themes.theme-oldschool .info span.key-p
   background: #fafafa;
   box-shadow: 0 4px 6px 0.06px rgba(0, 0, 0, 0.05);
 }
+
 section#KeyboardThemes .keyboard-themes .themes.theme-oldschool .info span.key-preview:after {
   content: "";
   position: absolute;
@@ -658,6 +668,7 @@ section#KeyboardTypes .keyboard-types .types .demo textarea::-moz-placeholder {
   transition: all 0.2s ease-in-out;
   color: #b8b8b8;
 }
+
 /* Sections: Keyboard Types and Themes off */
 
 /* Footer on */
@@ -690,6 +701,7 @@ footer#Footer a.github:hover {
 footer#Footer a.github i {
   margin-right: 2px;
 }
+
 /* Footer off */
 
 /* Code on */
@@ -734,7 +746,7 @@ code.js {
   color: #f8f8f8;
 }
 
-code > span.label {
+code>span.label {
   position: absolute;
   text-align: center;
   background: #5decaa;
@@ -749,7 +761,7 @@ code > span.label {
   border-radius: 10px 10px 0 0;
 }
 
-code > span.label > span.desc {
+code>span.label>span.desc {
   float: right;
   height: 100%;
   font-weight: normal;
@@ -761,25 +773,25 @@ code > span.label > span.desc {
   border-radius: 0 10px 0 0;
 }
 
-code > span.l1 {
+code>span.l1 {
   margin: 4px 0 6px;
   float: left;
   width: 100%;
 }
 
-code > span.l2 {
+code>span.l2 {
   padding-left: 20px;
 }
 
-code > span.l3 {
+code>span.l3 {
   padding-left: 40px;
 }
 
-code.json > span.l1 {
+code.json>span.l1 {
   margin: 2px 0 2px;
 }
 
-code > span.break {
+code>span.break {
   min-height: 10px;
 }
 
@@ -826,6 +838,7 @@ code span.imp {
 code span.the-button {
   cursor: pointer;
 }
+
 /* Code off */
 
 /* Tooltip on */
@@ -921,6 +934,7 @@ code span.the-button {
   border-bottom-color: #000000;
   border-width: 0 5px 5px;
 }
+
 /* Tooltip off */
 
 /* Responsive on */
@@ -939,7 +953,7 @@ code span.the-button {
     margin: 20px auto 40px;
   }
 
-  header#Header .get-kioskboard {
+  header#Header .get-BetterBoard {
     border-radius: 100px;
     display: table;
     float: unset;
@@ -989,6 +1003,7 @@ code span.the-button {
     width: 96%;
     margin: 0 2% 40px;
   }
+
   section#KeyboardThemes .keyboard-themes .themes:nth-last-of-type(1),
   section#KeyboardTypes .keyboard-types .types:nth-last-of-type(1) {
     margin-bottom: 0;
@@ -1026,6 +1041,7 @@ code span.the-button {
     float: unset;
   }
 }
+
 /* Responsive off */
 
 /* Furcan on */
@@ -1069,4 +1085,5 @@ input.furcan::-ms-input-placeholder {
   font-weight: 500;
   color: rgba(0, 0, 0, 0.25);
 }
+
 /* Furcan off */
