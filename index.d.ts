@@ -30,6 +30,12 @@ declare namespace BetterBoard {
     keysArrayOfObjects: { [index: string]: string }[];
 
     /**
+    * @property {string} - Required, The default type of keyboard to be shown (can be overridden with data-betterboard-type).
+    * @defaultValue `all`
+    */
+    keyboardType: 'all' | 'keyboard' | 'numpad';
+
+    /**
      * @property {string} - Required only if `keysArrayOfObjects` option is `null`.
      * @defaultValue `null`
      *
@@ -38,6 +44,14 @@ declare namespace BetterBoard {
      * e.g. '/Content/Plugins/BetterBoard/dist/BetterBoard-keys-english.json'
      */
     keysJsonUrl?: string;
+
+    /**
+     * @property {boolean} - Optional, Whether or not to show the special character button. Shown when `true`.
+     * @defaultValue `true`
+     *
+     * e.g. ["#", "€", "%", "+", "-", "*"]
+     */
+    specialCharButton?: boolean;
 
     /**
      * @property {Array<string>} - Optional, An Array of Strings can be set to override the built-in special characters.

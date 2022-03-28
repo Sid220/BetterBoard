@@ -66,6 +66,7 @@
     keysIconSize: '25px',
     autoScroll: true,
     moveBody: false,
+    specialCharButton: true,
   };
   var BetterBoardCachedKeys;
   var BetterBoardNewOptions;
@@ -361,8 +362,11 @@
           var theInputSelIndex = 0;
           var theInputValArray = [];
           var keyboardTypeArray = [BetterBoardTypes.All, BetterBoardTypes.Keyboard, BetterBoardTypes.Numpad];
-          var theInputKeyboardType = (theInput.dataset.BetterBoardType || '').toLocaleLowerCase('en');
-          var keyboardType = keyboardTypeArray.indexOf(theInputKeyboardType) > -1 ? theInputKeyboardType : BetterBoardTypes.All;
+          var theInputKeyboardType = (theInput.dataset.betterboardType || '').toLocaleLowerCase('en');
+          var keyboardType = keyboardTypeArray.indexOf(theInputKeyboardType) > -1 ? theInputKeyboardType : opt.keyboardType;
+          if (theInput.type === "number") {
+            keyboardType = BetterBoardTypes.Numpad;
+          }
           var theInputPlacement = (theInput.dataset.BetterBoardPlacement || '').toLocaleLowerCase('en');
           var keyboardPlacement = theInputPlacement === BetterBoardPlacements.Top ? theInputPlacement : BetterBoardPlacements.Bottom;
           var allowedSpecialCharacters = (theInput.dataset.BetterBoardSpecialcharacters || '').toLocaleLowerCase('en') === 'true';

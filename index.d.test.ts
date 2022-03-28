@@ -43,6 +43,7 @@ BetterBoard.init({
   keysIconSize: '25px',
   autoScroll: true,
   moveBody: true,
+  keyboardType: 'numpad',
 });
 
 BetterBoard.run('.js-BetterBoard', {
@@ -73,6 +74,7 @@ BetterBoard.run('.js-BetterBoard', {
   allowMobileKeyboard: false,
   language: 'en',
   theme: 'dark',
+  keyboardType: 'all',
 });
 
 const input = window.document.querySelector('.js-BetterBoard') as HTMLInputElement;
@@ -91,4 +93,5 @@ BetterBoard.run(input, {
   allowMobileKeyboard: true,
   language: 'en',
   theme: 'dark',
+  keyboardType: 'keyboard',
 });
