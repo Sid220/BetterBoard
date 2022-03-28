@@ -20,14 +20,14 @@ declare namespace BetterBoard {
   export interface IBetterBoardOptions {
 
     /**
-     * @property {Array<Object>} - Required, An Array of Objects has to be defined for the custom keys.
-     * @defaultValue `null`
+     * @property {Array<Object>} - Optional, An Array of Objects has to be defined for the custom keys.
+     * @defaultValue `[ { "0": "Q", "1": "W", "2": "E", "3": "R", "4": "T", "5": "Y", "6": "U", "7": "I", "8": "O", "9": "P" }, { "0": "A", "1": "S", "2": "D", "3": "F", "4": "G", "5": "H", "6": "J", "7": "K", "8": "L" }, { "0": "Z", "1": "X", "2": "C", "3": "V", "4": "B", "5": "N", "6": "M" } ]`
      *
      * e.g. [{"key":"value"}, {"key":"value"}] => [{"0":"A","1":"B","2":"C"}, {"0":"D","1":"E","2":"F"}]
      *
      * Hint: Each object creates a row element (HTML) on the keyboard.
      */
-    keysArrayOfObjects: { [index: string]: string }[];
+    keysArrayOfObjects?: { [index: string]: string }[];
 
     /**
     * @property {string} - Required, The default type of keyboard to be shown (can be overridden with data-betterboard-type).
@@ -36,7 +36,13 @@ declare namespace BetterBoard {
     keyboardType: 'all' | 'keyboard' | 'numpad';
 
     /**
-     * @property {string} - Required only if `keysArrayOfObjects` option is `null`.
+    * @property {string} - Optional, The position of the keyboard (can be overridden with data-betterboard-placement).
+    * @defaultValue `all`
+    */
+    keyboardPlacement?: 'top' | 'bottom';
+
+    /**
+     * @property {string} - Optional
      * @defaultValue `null`
      *
      * The path of the "BetterBoard-keys-${langugage}.json" file must be set to the "keysJsonUrl" option. (XMLHttpRequest to get the keys from JSON file.)
@@ -46,10 +52,9 @@ declare namespace BetterBoard {
     keysJsonUrl?: string;
 
     /**
-     * @property {boolean} - Optional, Whether or not to show the special character button. Shown when `true`.
+     * @property {boolean} - Optional, Whether or not to show the special character button, data-betterboard-specialcharacters can override. Shown when `true`.
      * @defaultValue `true`
      *
-     * e.g. ["#", "€", "%", "+", "-", "*"]
      */
     specialCharButton?: boolean;
 
@@ -96,7 +101,7 @@ declare namespace BetterBoard {
     moveBody?: boolean;
     /**
      * @property {boolean} - Optional, Allow or prevent real/physical keyboard usage. Prevented when `false`.
-     * @defaultValue `false`
+     * @defaultValue `true`
      *
      * In addition, the `allowMobileKeyboard` option must be `true` as well, if the real/physical keyboard has wanted to be used.
      */
@@ -104,7 +109,7 @@ declare namespace BetterBoard {
 
     /**
      * @property {boolean} - Optional, Allow or prevent mobile keyboard usage. Prevented when `false`.
-     * @defaultValue `false`
+     * @defaultValue `true`
      */
     allowMobileKeyboard?: boolean;
 

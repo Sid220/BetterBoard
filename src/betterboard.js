@@ -53,8 +53,8 @@
     language: 'en',
     theme: 'light', // "light" || "dark" || "flat" || "material" || "oldschool"
     capsLockActive: false,
-    allowRealKeyboard: false,
-    allowMobileKeyboard: false,
+    allowRealKeyboard: true,
+    allowMobileKeyboard: true,
     cssAnimations: true,
     cssAnimationsDuration: 360,
     cssAnimationsStyle: 'slide', // "slide" || "fade"
@@ -67,6 +67,9 @@
     autoScroll: true,
     moveBody: false,
     specialCharButton: true,
+    keyboardType: 'all', // "numpad" || "keyboard" || "all"
+    keyboardPlacement: 'bottom', // "top" || "bottom"
+    keysArrayOfObjects: [{ "0": "Q", "1": "W", "2": "E", "3": "R", "4": "T", "5": "Y", "6": "U", "7": "I", "8": "O", "9": "P" }, { "0": "A", "1": "S", "2": "D", "3": "F", "4": "G", "5": "H", "6": "J", "7": "K", "8": "L" }, { "0": "Z", "1": "X", "2": "C", "3": "V", "4": "B", "5": "N", "6": "M" }],
   };
   var BetterBoardCachedKeys;
   var BetterBoardNewOptions;
@@ -361,15 +364,35 @@
           var theInput = e.currentTarget;
           var theInputSelIndex = 0;
           var theInputValArray = [];
-          var keyboardTypeArray = [BetterBoardTypes.All, BetterBoardTypes.Keyboard, BetterBoardTypes.Numpad];
-          var theInputKeyboardType = (theInput.dataset.betterboardType || '').toLocaleLowerCase('en');
-          var keyboardType = keyboardTypeArray.indexOf(theInputKeyboardType) > -1 ? theInputKeyboardType : opt.keyboardType;
+
+
+          var keyboardType = opt.keyboardType;
+          if (typeof theInput.dataset.betterboardType !== 'undefined') {
+            var keyboardTypeArray = [BetterBoardTypes.All, BetterBoardTypes.Keyboard, BetterBoardTypes.Numpad];
+            var theInputKeyboardType = (theInput.dataset.betterboardType || '').toLocaleLowerCase('en');
+            keyboardType = keyboardTypeArray.indexOf(theInputKeyboardType) > -1 ? theInputKeyboardType : opt.keyboardType;
+          }
           if (theInput.type === "number") {
             keyboardType = BetterBoardTypes.Numpad;
           }
-          var theInputPlacement = (theInput.dataset.BetterBoardPlacement || '').toLocaleLowerCase('en');
-          var keyboardPlacement = theInputPlacement === BetterBoardPlacements.Top ? theInputPlacement : BetterBoardPlacements.Bottom;
-          var allowedSpecialCharacters = (theInput.dataset.BetterBoardSpecialcharacters || '').toLocaleLowerCase('en') === 'true';
+
+
+          var keyboardPlacement = opt.keyboardPlacement;
+          if (typeof theInput.dataset.betterboardPlacement !== 'undefined') {
+            var keyboardPlacementArray = [BetterBoardTypes.All, BetterBoardTypes.Keyboard, BetterBoardTypes.Numpad];
+            var theInputPlacement = (theInput.dataset.BetterBoardPlacement || '').toLocaleLowerCase('en');
+            keyboardPlacement = theInputPlacement.indexOf(keyboardPlacementArray) > -1 ? theInputPlacement : opt.keyboardPlacement;
+          }
+
+          var allowedSpecialCharacters = opt.specialCharButton;
+          if (typeof theInput.dataset.betterboardSpecialcharacters !== 'undefined') {
+            if (theInput.dataset.betterboardSpecialcharacters.toLocaleLowerCase('en') == 'true') {
+              allowedSpecialCharacters = true;
+            }
+            else if (theInput.dataset.betterboardSpecialcharacters.toLocaleLowerCase('en') == 'false') {
+              allowedSpecialCharacters = false;
+            }
+          }
           var keyboardLanguage = typeof opt.language === 'string' && opt.language.length > 0 ? opt.language.toLocaleLowerCase('en') : 'en';
           // input element variables: end
 
@@ -763,7 +786,7 @@
               styleRange.selectNode(window.document.head);
               var styleFragment = styleRange.createContextualFragment(style);
               window.document.head.appendChild(styleFragment);
-              if (opt.moveBody) {
+              if (opt.moveBody || opt.position === BetterBoardPlacements.Bottom) {
                 window.document.body.classList.add('BetterBoard-body-padding');
               }
             }
