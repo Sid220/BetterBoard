@@ -22,12 +22,12 @@ A pure JavaScript library for using virtual keyboards.
 ---------
 
 ## Current Version
-2.1.0 [*](https://github.com/furcan/BetterBoard/blob/main/CHANGELOG.md)
+1.0.0-beta.01 [*](https://github.com/furcan/BetterBoard/blob/main/CHANGELOG.md)
 
 ---------
 
 ## Documentation and Demo
-https://furcan.github.io/BetterBoard/
+COMING SOON!
 
 ---------
 
@@ -38,6 +38,7 @@ https://furcan.github.io/BetterBoard/
 ## (A) Install & Import
 
 ### Install
+COMING SOON... None of these work btw
 #### [yarn](https://yarnpkg.com/package/BetterBoard)
 ```js
 yarn add BetterBoard
@@ -59,9 +60,7 @@ import BetterBoard from 'BetterBoard';
 ### CSS and JS
 
 ```html
-<link rel="stylesheet" href="dist/BetterBoard-2.1.0.min.css" />
-
-<script src="dist/BetterBoard-2.1.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Sid220/BetterBoard@1.0.0-beta.01/src/betterboard.js"></script>
 ```
 
 ### Or only JS (All in One - Internal CSS)
