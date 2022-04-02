@@ -65,10 +65,10 @@
     keysFontWeight: 'normal',
     keysIconSize: '25px',
     autoScroll: true,
-    moveBody: false,
     specialCharButton: true,
     keyboardType: 'all', // "numpad" || "keyboard" || "all"
-    keyboardPlacement: 'bottom', // "top" || "bottom"
+    keyboardPlacement: 'bottom', // "top" || "bottom",
+    closeKeyboardButton: true,
     keysArrayOfObjects: [{ "0": "Q", "1": "W", "2": "E", "3": "R", "4": "T", "5": "Y", "6": "U", "7": "I", "8": "O", "9": "P" }, { "0": "A", "1": "S", "2": "D", "3": "F", "4": "G", "5": "H", "6": "J", "7": "K", "8": "L" }, { "0": "Z", "1": "X", "2": "C", "3": "V", "4": "B", "5": "N", "6": "M" }],
   };
   var BetterBoardCachedKeys;
@@ -369,7 +369,7 @@
           var keyboardType = opt.keyboardType;
           if (typeof theInput.dataset.betterboardType !== 'undefined') {
             var keyboardTypeArray = [BetterBoardTypes.All, BetterBoardTypes.Keyboard, BetterBoardTypes.Numpad];
-            var theInputKeyboardType = (theInput.dataset.betterboardType || '').toLocaleLowerCase('en');
+            var theInputKeyboardType = theInput.dataset.betterboardType.toLocaleLowerCase('en');
             keyboardType = keyboardTypeArray.indexOf(theInputKeyboardType) > -1 ? theInputKeyboardType : opt.keyboardType;
           }
           if (theInput.type === "number") {
@@ -379,9 +379,9 @@
 
           var keyboardPlacement = opt.keyboardPlacement;
           if (typeof theInput.dataset.betterboardPlacement !== 'undefined') {
-            var keyboardPlacementArray = [BetterBoardTypes.All, BetterBoardTypes.Keyboard, BetterBoardTypes.Numpad];
-            var theInputPlacement = (theInput.dataset.BetterBoardPlacement || '').toLocaleLowerCase('en');
-            keyboardPlacement = theInputPlacement.indexOf(keyboardPlacementArray) > -1 ? theInputPlacement : opt.keyboardPlacement;
+            var keyboardPlacementArray = [BetterBoardPlacements.Top, BetterBoardPlacements.Bottom];
+            var theInputPlacement = theInput.dataset.betterboardPlacement.toLocaleLowerCase('en');
+            keyboardPlacement = keyboardPlacementArray.indexOf(theInputPlacement) > -1 ? theInputPlacement : opt.keyboardPlacement;
           }
 
           var allowedSpecialCharacters = opt.specialCharButton;
@@ -429,6 +429,7 @@
           var spaceKey = '<span style="font-family:' + fontFamily + ',sans-serif;font-weight:' + fontWeight + ';font-size:' + fontSize + ';" class="BetterBoard-key BetterBoard-key-space ' + (keysAllowSpacebar ? 'spacebar-allowed' : 'spacebar-denied') + '" data-value="' + spaceKeyValue + '">' + keysSpacebarText + '</span>';
           var capsLockKey = '<span style="font-family:' + fontFamily + ',sans-serif;font-weight:' + fontWeight + ';font-size:' + fontSize + ';" class="BetterBoard-key-capslock ' + (isCapsLockActive ? 'capslock-active' : '') + '">' + BetterBoardIconCapslock(keysIconWidth, keysIconColor) + '</span>';
           var backspaceKey = '<span style="font-family:' + fontFamily + ',sans-serif;font-weight:' + fontWeight + ';font-size:' + fontSize + ';" class="BetterBoard-key-backspace">' + BetterBoardIconBackspace(keysIconWidth, keysIconColor) + '</span>';
+          var closeKeyboardKey = '<span class="BetterBoard-key-closeKeyboard" id="BetterBoardCloseKeyboard"><svg style="width:25px;height:25px;fill:#707070;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M169.4 278.6C175.6 284.9 183.8 288 192 288s16.38-3.125 22.62-9.375l160-160c12.5-12.5 12.5-32.75 0-45.25s-32.75-12.5-45.25 0L192 210.8L54.63 73.38c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L169.4 278.6zM329.4 265.4L192 402.8L54.63 265.4c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25l160 160C175.6 476.9 183.8 480 192 480s16.38-3.125 22.62-9.375l160-160c12.5-12.5 12.5-32.75 0-45.25S341.9 252.9 329.4 265.4z"/></svg></span>';
           // static keys: end
 
           // keyboard "specialcharacter" setting is "true": begin
@@ -500,6 +501,7 @@
                 }
               }
               keysRowElements += '<div class="BetterBoard-row BetterBoard-row-top">' + numberKeysContent + '</div>';
+
             }
             // only keyboard type is "all": end
 
@@ -520,7 +522,7 @@
             // dynamic keys group: end
 
             // bottom keys group: begin
-            keysRowElements += '<div class="BetterBoard-row BetterBoard-row-bottom ' + (allowedSpecialCharacters ? 'BetterBoard-with-specialcharacter' : '') + '">' + capsLockKey + specialCharacterKey + spaceKey + backspaceKey + '</div>';
+            keysRowElements += '<div class="BetterBoard-row BetterBoard-row-bottom ' + (allowedSpecialCharacters ? 'BetterBoard-with-specialcharacter' : '') + '">' + capsLockKey + specialCharacterKey + spaceKey + backspaceKey + (opt.closeKeyboardButton ? closeKeyboardKey : "") + '</div>';
             // bottom keys group: end
 
             // add if special character keys allowed: begin
@@ -781,14 +783,12 @@
                 styleElm.parentNode.removeChild(styleElm);
               }
 
-              var style = '<style id="BetterBoardBodyPadding">.BetterBoard-body-padding {padding-' + (isPaddingTop ? 'top' : 'bottom') + ':' + keyboardHeight + 'px !important;}</style>';
+              var style = '<style id="BetterBoardBodyPadding">.BetterBoard-body-padding {padding-' + (keyboardPlacement === BetterBoardPlacements.Bottom ? 'bottom' : 'top') + ':' + keyboardHeight + 'px !important;}</style>';
               var styleRange = window.document.createRange();
               styleRange.selectNode(window.document.head);
               var styleFragment = styleRange.createContextualFragment(style);
               window.document.head.appendChild(styleFragment);
-              if (opt.moveBody || opt.position === BetterBoardPlacements.Bottom) {
-                window.document.body.classList.add('BetterBoard-body-padding');
-              }
+              window.document.body.classList.add('BetterBoard-body-padding');
             }
             // body padding bottom || top: end
 
@@ -853,6 +853,22 @@
             };
             window.document.addEventListener('click', docClickListener); // add document click listener
             // keyboard click outside listener: end
+            // Close keyboard click event listener: begin
+            var closeKeyboardClickListener = function () {
+              // add remove class
+              BetterBoardVirtualKeyboard.classList.add(cssAnimationsStyle + '-remove');
+
+              // remove after the animation has been ended
+              var removeTimeout = setTimeout(function () {
+                if (keyboardElement.parentNode !== null) {
+                  keyboardElement.parentNode.removeChild(keyboardElement); // remove keyboard
+                  window.document.body.classList.remove('BetterBoard-body-padding'); // remove body padding class
+                  window.document.removeEventListener('click', docClickListener); // remove document click listener
+                }
+                clearTimeout(removeTimeout);
+              }, cssAnimationsDuration);
+            }
+            document.getElementById("BetterBoardCloseKeyboard").addEventListener('click', closeKeyboardClickListener);
           }
           // append keyboard: end
         };

@@ -59,6 +59,13 @@ declare namespace BetterBoard {
     specialCharButton?: boolean;
 
     /**
+    * @property {boolean} - Optional, Whether or not to show the close keyboard button, Shown when `true`.
+    * @defaultValue `true`
+    *
+    */
+    closeKeyboardButton?: boolean;
+
+    /**
      * @property {Array<string>} - Optional, An Array of Strings can be set to override the built-in special characters.
      * @defaultValue `null`
      *
@@ -94,11 +101,6 @@ declare namespace BetterBoard {
      */
     capsLockActive?: boolean;
 
-    /**
-     * @property {boolean} - Optional, Whether or not to add padding to the body when the keyboard is open. Not added when `false`.
-     * @defaultValue `false`
-     */
-    moveBody?: boolean;
     /**
      * @property {boolean} - Optional, Allow or prevent real/physical keyboard usage. Prevented when `false`.
      * @defaultValue `true`

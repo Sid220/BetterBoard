@@ -42,7 +42,6 @@ BetterBoard.init({
   keysFontWeight: 'normal',
   keysIconSize: '25px',
   autoScroll: true,
-  moveBody: true,
   keyboardType: 'numpad',
 });
 
