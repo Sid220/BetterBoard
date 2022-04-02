@@ -2,7 +2,7 @@
   "name": "BetterBoard",
   "main": "dist/BetterBoard-aio-2.1.0.min.js",
   "types": "index.d.ts",
-  "version": "2.1.0",
+  "version": "1.0.0-beta.01",
   "description": "A pure JavaScript library for using virtual keyboards.",
   "homepage": "https://github.com/Sid220/BetterBoard",
   "files": [
