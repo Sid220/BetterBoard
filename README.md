@@ -16,7 +16,7 @@
 [![TypeScript][typescript-badge]][typescript-url]
 [![License][lic-badge]][lic-url]
 
-# BetterBoard - KioskBoard <i>improved</i>
+# BetterBoard - The ULTIMATE virtual keyboard solution
 A pure JavaScript library for using virtual keyboards.
 
 ---------
