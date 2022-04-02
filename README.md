@@ -58,10 +58,9 @@ import BetterBoard from 'BetterBoard';
 
 ## (B) Adding to an HTML Document
 ### CSS and JS
-Doesn't work yet...
-
+Actually works!:
 ```html
-<script src="https://cdn.jsdelivr.net/gh/Sid220/BetterBoard@1.0.0-beta.01/src/betterboard.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Sid220/BetterBoard@master/src/betterboard.js"></script>
 ```
 
 ### Or only JS (All in One - Internal CSS)
