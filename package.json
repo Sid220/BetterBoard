@@ -1,6 +1,6 @@
 {
   "name": "betterboard",
-  "main": "dist/BetterBoard-aio-2.1.0.min.js",
+  "main": "dist/betterboard1.0.0-beta.01.aio.min.js",
   "types": "index.d.ts",
   "version": "1.0.0-beta.01",
   "description": "A pure JavaScript library for using virtual keyboards.",
