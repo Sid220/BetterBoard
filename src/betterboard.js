@@ -1,6 +1,5 @@
 /*!
 * BetterBoard - Virtual Keyboard ('https://github.com/Sid220/BetterBoard')
-* Version: 1.0.0-beta.01
 * Author: The Fake Slim Shady ('https://github.com/Sid220')
 * Copyright 2022 BetterBoard - Virtual Keyboard, MIT Licence ('https://opensource.org/licenses/MIT')*
 */
