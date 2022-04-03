@@ -1,5 +1,5 @@
 {
-  "name": "BetterBoard",
+  "name": "betterboard",
   "main": "dist/BetterBoard-aio-2.1.0.min.js",
   "types": "index.d.ts",
   "version": "1.0.0-beta.01",
