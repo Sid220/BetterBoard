@@ -2,7 +2,7 @@
   "name": "betterboard",
   "main": "dist/betterboard1.0.0-beta.07-aio.min.js",
   "types": "index.d.ts",
-  "version": "1.0.0-beta.07",
+  "version": "1.0.0-beta.08",
   "description": "A pure JavaScript library for using virtual keyboards.",
   "homepage": "https://github.com/Sid220/BetterBoard",
   "files": [
@@ -47,7 +47,7 @@
     "dev:lint": "yarn dev:eslint",
     "dev:allinone": "node .dev/dev-allinone.js",
     "dev:minifier": "yarn dev:allinone && node .dev/dev-minifier.js",
-    "build": "rm ./dist/betterboard* && tsc && tsc --build && minify --out-file=./dist/betterboard$(cat version).min.js ./src/betterboard.js && cp ./src/betterboard.css ./dist/betterboard$(cat version).css && npm run dev:allinone && minify --out-file=./dist/betterboard$(cat version)-aio.min.js ./build/betterboard-aio.js"
+    "build": "rm ./dist/betterboard* && tsc && tsc --build && minify --out-file=./dist/betterboard$(cat version).min.js ./src/betterboard.js && cp ./src/betterboard.css ./dist/betterboard$(cat version).css && npm run dev:allinone && minify --out-file=./dist/betterboard$(cat version)-aio.min.js ./build/betterboard-aio.js && npm publish"
   },
   "packageManager": "yarn@3.2.0"
 }

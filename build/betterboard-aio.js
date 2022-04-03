@@ -557,12 +557,16 @@
             if (opt.cssAnimationsStyle === 'slide') {
               cssAnimationsStyle = 'BetterBoard-slide';
             }
+            globalThis.cssAnimationsStyle = cssAnimationsStyle;
+            globalThis.cssAnimationsDuration = cssAnimationsDuration;
+
           }
           // check "cssAnimations": end
 
           // create the keyboard: begin
           var theTheme = typeof opt.theme === 'string' && opt.theme.length > 0 ? opt.theme.trim() : 'light';
           var BetterBoardVirtualKeyboard = window.document.createElement('div');
+          globalThis.BetterBoardVirtualKeyboard = BetterBoardVirtualKeyboard;
           BetterBoardVirtualKeyboard.id = 'BetterBoard-VirtualKeyboard';
           BetterBoardVirtualKeyboard.classList.add('BetterBoard-theme-' + theTheme);
           BetterBoardVirtualKeyboard.classList.add('BetterBoard-placement-' + keyboardPlacement);
@@ -835,6 +839,7 @@
                     clearTimeout(removeTimeout);
                   }, cssAnimationsDuration);
                 }
+                globalThis.docClickListener = docClickListener;
                 // check event target to remove keyboard: end
 
                 // toggle inputs: begin
@@ -868,8 +873,11 @@
                 clearTimeout(removeTimeout);
               }, cssAnimationsDuration);
             }
-            document.getElementById("BetterBoardCloseKeyboard").addEventListener('click', closeKeyboardClickListener);
+            if (opt.closeKeyboardButton && keyboardType !== BetterBoardTypes.Numpad) {
+              document.getElementById("BetterBoardCloseKeyboard").addEventListener('click', closeKeyboardClickListener)
+            }
           }
+          globalThis.keyboardElement = keyboardElement;
           // append keyboard: end
         };
         input.addEventListener('focus', inputFocusListener); // add input focus listener
@@ -953,18 +961,29 @@
       // Step 3: Select the element(s): end
     },
     closeKeyboard: function () {
-      // add remove class
-      BetterBoardVirtualKeyboard.classList.add(cssAnimationsStyle + '-remove');
+      if (typeof BetterBoardVirtualKeyboard !== 'undefined' && BetterBoardVirtualKeyboard !== null) {
+        // add remove class
+        BetterBoardVirtualKeyboard.classList.add(cssAnimationsStyle + '-remove');
 
-      // remove after the animation has been ended
-      var removeTimeout = setTimeout(function () {
-        if (keyboardElement.parentNode !== null) {
-          keyboardElement.parentNode.removeChild(keyboardElement); // remove keyboard
-          window.document.body.classList.remove('BetterBoard-body-padding'); // remove body padding class
-          window.document.removeEventListener('click', docClickListener); // remove document click listener
-        }
-        clearTimeout(removeTimeout);
-      }, cssAnimationsDuration);
+        // remove after the animation has been ended
+        var removeTimeout = setTimeout(function () {
+          if (keyboardElement.parentNode !== null) {
+            keyboardElement.parentNode.removeChild(keyboardElement); // remove keyboard
+            window.document.body.classList.remove('BetterBoard-body-padding'); // remove body padding class
+            window.document.removeEventListener('click', docClickListener); // remove document click listener
+            BetterBoardVirtualKeyboard = undefined;
+            keyboardElement = undefined;
+          }
+          clearTimeout(removeTimeout);
+        }, cssAnimationsDuration);
+
+      }
+      else {
+        BetterBoardConsoleLog('Attempted to close the keyboard while closed');
+      }
+    },
+    isKeyboardOpen: function () {
+      return (typeof BetterBoardVirtualKeyboard !== 'undefined' && BetterBoardVirtualKeyboard !== null);
     }
   };
 
