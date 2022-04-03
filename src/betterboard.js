@@ -951,6 +951,20 @@
       }
       // Step 3: Select the element(s): end
     },
+    closeKeyboard: function () {
+      // add remove class
+      BetterBoardVirtualKeyboard.classList.add(cssAnimationsStyle + '-remove');
+
+      // remove after the animation has been ended
+      var removeTimeout = setTimeout(function () {
+        if (keyboardElement.parentNode !== null) {
+          keyboardElement.parentNode.removeChild(keyboardElement); // remove keyboard
+          window.document.body.classList.remove('BetterBoard-body-padding'); // remove body padding class
+          window.document.removeEventListener('click', docClickListener); // remove document click listener
+        }
+        clearTimeout(removeTimeout);
+      }, cssAnimationsDuration);
+    }
   };
 
   return BetterBoard;
