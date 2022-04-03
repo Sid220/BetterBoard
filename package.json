@@ -40,13 +40,14 @@
     "typescript": "^4.6.3"
   },
   "scripts": {
-    "src:stylelint": "stylelint src/BetterBoard.css",
-    "src:eslint": "eslint src/BetterBoard.js",
+    "src:stylelint": "stylelint src/betterboard.css",
+    "src:eslint": "eslint src/betterboard.js",
     "src:lint": "yarn src:stylelint && yarn src:eslint",
     "dev:eslint": "eslint -c .dev/.eslintrc.json .dev",
     "dev:lint": "yarn dev:eslint",
     "dev:allinone": "yarn dev:lint && yarn src:lint && node .dev/dev-allinone.js",
     "dev:minifier": "yarn dev:allinone && node .dev/dev-minifier.js",
-    "build": "yarn dev:minifier"
-  }
+    "build": "tsc && tsc --build && minify --out-file=./dist/betterboard$(cat version).aio.min.js ./src/betterboard.js && cp ./src/betterboard.css ./dist/betterboard$(cat version).css"
+  },
+  "packageManager": "yarn@3.2.0"
 }

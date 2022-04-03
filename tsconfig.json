@@ -10,7 +10,6 @@
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -20,9 +19,7 @@
     "incremental": false
   },
   "include": [
-    "index.d.ts",
-    "index.d.test.ts",
-    "build/**/*.ts"
+    "*.ts"
   ],
   "exclude": [
     ".dev",
