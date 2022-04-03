@@ -9,6 +9,7 @@
 // Dev Dependencies
 const chalk = require('chalk');
 const package = require('../package.json');
+var fs = require('fs');
 
 // Constants: begin
 // - CleanCSS Options: begin
@@ -59,9 +60,9 @@ module.exports = {
   dirInputDev: 'src',
   dirOutputDev: 'build',
   dirOutputDist: 'dist',
-  fileScript: 'BetterBoard.js',
-  fileStyle: 'BetterBoard.css',
-  fileScriptAIO: 'BetterBoard-aio.js',
+  fileScript: 'betterboard.js',
+  fileStyle: 'betterboard.css',
+  fileScriptAIO: 'betterboard-aio.js',
   version: (JSON.stringify((package || {}).version) || '').replace(/"/gm, ''),
   author: (JSON.stringify((package || {}).author) || '').replace(/"/gm, ''),
   title: 'BetterBoard - Virtual Keyboard',

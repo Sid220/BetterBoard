@@ -57,7 +57,7 @@ const createAIOfileFromJsAndCss = () => {
   if (styleAsMinified && scriptAsNormal) {
     // if output directory is exist
     if (existsSync(Constants.dirOutputDev)) {
-      const commentVersion = `* Version:`;
+      const commentVersion = `* Author: The Fake Slim Shady ('https://github.com/Sid220')`
       const commentDescAndVersion = `* Description: This file contains the BetterBoard CSS codes as internal to use the BetterBoard as one file. This file has been created automatically from using the "BetterBoard.js", and "BetterBoard.css" files.\n${commentVersion}`;
       const internalCSS = `var internalCSS = '';`;
       // add a description comment before the version && replace internal css codes => if they exist
