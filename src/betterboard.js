@@ -42,7 +42,8 @@
     }
   };
   // BetterBoard: Internal CSS: end
-
+  var BetterBoardInputsIncorrectlyConfigured;
+  globalThis.BetterBoardInputsIncorrectlyConfigured = false;
   // BetterBoard: Default Options: begin
   var BetterBoardDefaultOptions = {
     keysArrayOfObjects: null,
@@ -281,9 +282,11 @@
       var allowedElementTypes = ['input', 'textarea'];
 
       // If: Check the selector is an element
-      var isElement = allowedElementTypes.indexOf(((selectorOrElement || {}).nodeName || '').toLocaleLowerCase('en')) > -1;
+      var isElement = allowedElementTypes.indexOf(((selectorOrElement[0] || {}).nodeName || '').toLocaleLowerCase('en')) > -1;
       if (isElement) {
-        kbElements.push(selectorOrElement);
+        [...selectorOrElement].forEach((element) => {
+            kbElements.push(element);
+        })
       }
       // Else: Check the selector is valid for the querySelector
       else {
@@ -297,11 +300,10 @@
         // Get the element(s)
         kbElements = window.document.querySelectorAll(selectorOrElement);
         if (kbElements.length < 1) {
-          BetterBoardConsoleError('You called the BetterBoard with the "' + selectorOrElement + '" selector, but there is no such element on the document.');
-          return false;
+          BetterBoardConsoleLog('You called the BetterBoard with the "' + selectorOrElement + '" selector, but there is no such element on the document. Attempting default');
+          globalThis.BetterBoardInputsIncorrectlyConfigured = true;
         }
       }
-
       // If: Check the options to initialize or extend
       if (typeof options === 'object' && Object.keys(options).length > 0) {
         if (!BetterBoardNewOptions) {
@@ -354,13 +356,14 @@
         allInputs.push(input);
 
         // all inputs readonly check for allowing mobile keyboard
-        var getReadOnlyAttr = input.getAttribute('readonly') !== null;
+        // var getReadOnlyAttr = input.getAttribute('readonly') !== null;
         var allowMobileKeyboard = opt.allowMobileKeyboard === true;
 
         // each input focus listener: begin
         var inputFocusListener = function (e) {
           // input element variables: begin
-          var theInput = e.currentTarget;
+          var theInput = e;
+          console.log(theInput);
           var theInputSelIndex = 0;
           var theInputValArray = [];
 
@@ -879,17 +882,39 @@
           globalThis.keyboardElement = keyboardElement;
           // append keyboard: end
         };
-        input.addEventListener('focus', inputFocusListener); // add input focus listener
-        // each input focus listener: end
-
         // each input focusout listener: begin
         var inputFocusoutListener = function (e) {
           if (!allowMobileKeyboard && !getReadOnlyAttr) {
-            e.currentTarget.removeAttribute('readonly');
+            e.target.removeAttribute('readonly');
           }
         };
-        input.addEventListener('focusout', inputFocusoutListener); // add input focusout listener
         // each input focusout listener: end
+        if(window.BetterBoardInputsIncorrectlyConfigured) {
+          document.addEventListener('focusin',function(e){
+            if(!!e.target && (e.target.nodeName === 'INPUT' || e.target.nodeName === "TEXTAREA")){
+              console.log("Focus IN");
+              inputFocusListener(e.target);
+            }
+          });
+          document.addEventListener('focusout',function(e) {
+            if(e.target && (e.target.nodeName === 'INPUT' || e.target.nodeName === "TEXTAREA")){
+              console.log("Focus OUT");
+              inputFocusoutListener(e);
+              if(e.relatedTarget && (e.relatedTarget.nodeName === "INPUT" || e.relatedTarget.nodeName === "TEXTAREA")) {
+                console.log("IS FOCUSING ON NEW ELEMENT");
+                setTimeout(() => {
+                  inputFocusListener(e.relatedTarget);
+                }, 850);
+              }
+            }
+          });
+        }
+        else {
+          input.addEventListener('focus', function(e) { inputFocusListener(e.target) });
+          input.addEventListener('focusout', function(e) { inputFocusoutListener(e.target) }); // add input focusout listener
+        } // add input focus listener
+        // each input focus listener: end
+
       };
       // Functions: Create Keyboard and AppendTo: end
 
@@ -917,6 +942,7 @@
                   var parsedData = JSON.parse(data); // JSON parse data
                   if (BetterBoardCheckArrayOfObjects(parsedData)) {
                     BetterBoardCachedKeys = parsedData; // cache the keys
+                    console.log("doesn't have cached keys");
                     createKeyboardAndAppendTo(parsedData, input); // create the keyboard
                   } else {
                     BetterBoardConsoleError('Array of objects of the keys are not valid. \n\nVisit to learn more: ' + BetterBoardGithubUrl);
@@ -934,30 +960,46 @@
       // Functions: Get the Keys from JSON by XMLHttpRequest and AppendTo: end
 
       // Step 3: Select the element(s): begin
-      for (var kbIndex = 0; kbIndex < kbElements.length; kbIndex++) {
-        // each element
-        var eachElement = kbElements[kbIndex];
+      if(!window.BetterBoardInputsIncorrectlyConfigured) {
+        console.log("continued");
 
-        // each element tag name
-        var getTagName = ((eachElement || {}).tagName || '').toLocaleLowerCase('en');
+        for (var kbIndex = 0; kbIndex < kbElements.length; kbIndex++) {
+          // each element
+          var eachElement = kbElements[kbIndex];
 
-        // if: an input or textarea element
-        if (allowedElementTypes.indexOf(getTagName) > -1) {
-          // if: has cached keys => create the keyboard by using cached keys
-          if (BetterBoardCachedKeys) {
-            createKeyboardAndAppendTo(BetterBoardCachedKeys, eachElement);
+          // each element tag name
+          var getTagName = ((eachElement || {}).tagName || '').toLocaleLowerCase('en');
+
+          // if: an input or textarea element
+          if (allowedElementTypes.indexOf(getTagName) > -1) {
+            // if: has cached keys => create the keyboard by using cached keys
+            if (BetterBoardCachedKeys) {
+              console.log("has cached keys");
+              createKeyboardAndAppendTo(BetterBoardCachedKeys, eachElement);
+            }
+            // else: try to get the keys from the JSON file via XmlHttpRequest
+            else {
+              getKeysViaXmlHttpRequest(opt.keysJsonUrl, eachElement);
+            }
           }
-          // else: try to get the keys from the JSON file via XmlHttpRequest
+          // else: other elements
           else {
-            getKeysViaXmlHttpRequest(opt.keysJsonUrl, eachElement);
+            BetterBoardConsoleLog('You have to call the "BetterBoard" with an ID/ClassName of an Input or a TextArea element. Your element\'s tag name is: "' + getTagName + '". \n\nYou can visit the Documentation page to learn more. \n\nVisit: ' + BetterBoardGithubUrl);
           }
-        }
-        // else: other elements
-        else {
-          BetterBoardConsoleLog('You have to call the "BetterBoard" with an ID/ClassName of an Input or a TextArea element. Your element\'s tag name is: "' + getTagName + '". \n\nYou can visit the Documentation page to learn more. \n\nVisit: ' + BetterBoardGithubUrl);
         }
       }
-      // Step 3: Select the element(s): end
+      else {
+        var notRealVariable = true;
+        if (BetterBoardCachedKeys) {
+          console.log("has cached keys");
+          createKeyboardAndAppendTo(BetterBoardCachedKeys, notRealVariable);
+        }
+        // else: try to get the keys from the JSON file via XmlHttpRequest
+        else {
+          getKeysViaXmlHttpRequest(opt.keysJsonUrl, notRealVariable);
+        }
+      }
+    // Step 3: Select the element(s): end
     },
     closeKeyboard: function () {
       if (typeof BetterBoardVirtualKeyboard !== 'undefined' && BetterBoardVirtualKeyboard !== null) {
@@ -975,10 +1017,11 @@
           }
           clearTimeout(removeTimeout);
         }, cssAnimationsDuration);
-
+        return true;
       }
       else {
         BetterBoardConsoleLog('Attempted to close the keyboard while closed');
+        return false;
       }
     },
     isKeyboardOpen: function () {
