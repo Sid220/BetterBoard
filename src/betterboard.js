@@ -46,7 +46,6 @@
   globalThis.BetterBoardInputsIncorrectlyConfigured = false;
   // BetterBoard: Default Options: begin
   var BetterBoardDefaultOptions = {
-    keysArrayOfObjects: null,
     keysJsonUrl: null,
     keysSpecialCharsArrayOfStrings: null,
     keysNumpadArrayOfNumbers: null,
@@ -891,7 +890,7 @@
         // each input focusout listener: end
         if(window.BetterBoardInputsIncorrectlyConfigured) {
           document.addEventListener('focusin',function(e){
-            if(!!e.target && (e.target.nodeName === 'INPUT' || e.target.nodeName === "TEXTAREA")){
+            if(!!e.target && ((e.target.nodeName === 'INPUT' && (e.target.type !== 'range' && e.target.type !== 'button' && e.target.type !== 'reset' && e.target.type !== 'radio' && e.target.type !== 'checkbox' && e.target.type !== 'color' && e.target.type !== 'date' && e.target.type !== 'datetime-local' && e.target.type !== 'image')  && e.target.type !== 'file' && e.target.type !== 'month' && e.target.type !== 'week') || e.target.nodeName === "TEXTAREA")){
               console.log("Focus IN");
               inputFocusListener(e.target);
             }
